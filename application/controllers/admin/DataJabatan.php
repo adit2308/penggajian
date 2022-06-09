@@ -14,7 +14,7 @@ class DataJabatan extends CI_Controller
     public function index()
     {
         $data['title'] = "Data Jabatan";
-        $data['jabatan'] = $this->penggajianModel->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['jabatan'] = $this->PenggajianModel->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/dataJabatan', $data);
@@ -49,7 +49,7 @@ class DataJabatan extends CI_Controller
                 'uang_makan' => $uang_makan,
             );
 
-            $this->penggajianModel->insert_data($data, 'data_jabatan');
+            $this->PenggajianModel->insert_data($data, 'data_jabatan');
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Ditambahkan!</strong>
             </div>');
@@ -91,7 +91,7 @@ class DataJabatan extends CI_Controller
                 'id_jabatan' => $id
             );
 
-            $this->penggajianModel->update_data('data_jabatan', $data, $where);
+            $this->PenggajianModel->update_data('data_jabatan', $data, $where);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Diupdate!</strong></div>');
             redirect('admin/dataJabatan');
@@ -113,7 +113,7 @@ class DataJabatan extends CI_Controller
     public function deleteData($id)
     {
         $where = array('id_jabatan' => $id);
-        $this->penggajianModel->delete_data($where, 'data_jabatan');
+        $this->PenggajianModel->delete_data($where, 'data_jabatan');
         $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Data Berhasil Dihapus!</strong></div>');
         redirect('admin/dataJabatan');

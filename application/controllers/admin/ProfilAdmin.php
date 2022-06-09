@@ -35,7 +35,7 @@ class ProfilAdmin extends CI_Controller
             $data = array('password' => $passBaru);
             $id = array('id_pegawai' => $this->session->userdata('hak_akses'));
 
-            $this->penggajianModel->update_data('data_pegawai', $data, $id);
+            $this->PenggajianModel->update_data('data_pegawai', $data, $id);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Password Berhasil Diubah, Silahkan Login Ulang!</strong>
             </div>');

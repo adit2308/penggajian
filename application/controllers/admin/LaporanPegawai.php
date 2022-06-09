@@ -22,7 +22,7 @@ class LaporanPegawai extends CI_Controller
     public function cetakDataPegawai()
     {
         $data['title'] = "Cetak Data Pegawai";
-        $data['pegawai'] = $this->penggajianModel->get_data('data_pegawai')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['pegawai'] = $this->PenggajianModel->get_data('data_pegawai')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('admin/cetakDataPegawai', $data);
     }
