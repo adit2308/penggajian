@@ -13,7 +13,7 @@ class SlipGaji extends CI_Controller
     public function index()
     {
         $data['title'] = "Slip Gaji Pegawai";
-        $data['pegawai'] = $this->PenggajianModel->get_data('data_pegawai')->result();
+        $data['pegawai'] = $this->Penggajian_model->get_data('data_pegawai')->result();
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/slipGaji', $data);

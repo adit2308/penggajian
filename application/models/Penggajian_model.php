@@ -1,7 +1,7 @@
 <?php
 
 //untuk menampilkan data, dibutuhkan model
-class PenggajianModel extends CI_Model
+class Penggajian_model extends CI_Model
 {
     public function get_data($table)
     {

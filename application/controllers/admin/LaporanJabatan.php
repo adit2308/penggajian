@@ -22,7 +22,7 @@ class LaporanJabatan extends CI_Controller
     public function cetakDataJabatan()
     {
         $data['title'] = "Cetak Data Jabatan";
-        $data['jabatan'] = $this->PenggajianModel->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['jabatan'] = $this->Penggajian_model->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('admin/cetakDataJabatan', $data);
     }

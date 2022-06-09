@@ -25,7 +25,7 @@ class DataGaji extends CI_Controller
     {
         $data['tittle'] =   "Data Gaji";
         $nik = $this->session->userdata('nik');
-        $data['potongan']  = $this->penggajianModel->get_data('potongan_gaji')->result();
+        $data['potongan']  = $this->Penggajian_model->get_data('potongan_gaji')->result();
         $data['gaji']   = $this->db->query("SELECT data_pegawai.nama_pegawai, 
         data_pegawai.nik, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan,
         data_absensi.tanpa_keterangan, data_absensi.bulan, data_absensi.id_absensi
@@ -44,7 +44,7 @@ class DataGaji extends CI_Controller
     public function cetakSlip($id)
     {
         $tittle['tittle']  = "Cetak Slip Gaji";
-        $data['potongan']  =  $this->penggajianModel->get_data('potongan_gaji')->result();
+        $data['potongan']  =  $this->Penggajian_model->get_data('potongan_gaji')->result();
         $data['print_slip'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, 
         data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan,
         data_absensi.tanpa_keterangan, data_absensi.bulan

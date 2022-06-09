@@ -14,7 +14,7 @@ class DataPegawai extends CI_Controller
     public function index()
     {
         $data['title'] = "Data Pegawai";
-        $data['pegawai'] = $this->PenggajianModel->get_data('data_pegawai')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['pegawai'] = $this->Penggajian_model->get_data('data_pegawai')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/dataPegawai', $data);
@@ -23,7 +23,7 @@ class DataPegawai extends CI_Controller
     public function tambahData()
     {
         $data['title'] = "Tambah Data Pegawai";
-        $data['jabatan'] = $this->PenggajianModel->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['jabatan'] = $this->Penggajian_model->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formTambahPegawai', $data);
@@ -58,7 +58,7 @@ class DataPegawai extends CI_Controller
                 'password'        => $password,
             );
 
-            $this->PenggajianModel->insert_data($data, 'data_pegawai');
+            $this->Penggajian_model->insert_data($data, 'data_pegawai');
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Ditambahkan!</strong>
             </div>');
@@ -72,7 +72,7 @@ class DataPegawai extends CI_Controller
     public function updateData($id)
     {
         $data['title'] = 'Update Data Pegawai';
-        $data['jabatan'] = $this->PenggajianModel->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['jabatan'] = $this->Penggajian_model->get_data('data_jabatan')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $data['pegawai'] = $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai='$id'")->result();
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
@@ -113,7 +113,7 @@ class DataPegawai extends CI_Controller
                 'id_pegawai' => $id_pegawai
             );
             // disini kita akan mengupdate data_pegawai, yang dimana data tersebut berasal dari $data=array, sesuai dengan lokasi idnya yaitu $where
-            $this->PenggajianModel->update_data('data_pegawai', $data, $where);
+            $this->Penggajian_model->update_data('data_pegawai', $data, $where);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Diupdate!</strong>
             </div>');
@@ -137,7 +137,7 @@ class DataPegawai extends CI_Controller
     public function deleteData($id)
     {
         $where = array('id_pegawai' => $id);
-        $this->PenggajianModel->delete_data($where, 'data_pegawai');
+        $this->Penggajian_model->delete_data($where, 'data_pegawai');
         $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Data Berhasil Dihapus!</strong></div>');
         redirect('admin/dataPegawai');

@@ -9,14 +9,14 @@ class Welcome extends CI_Controller
 		//function ini berfungsi untuk melakukan form_validation
 		if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke formLogin
 			$data['title'] = "Form Login";
-			$data['pegawai'] = $this->PenggajianModel->get_data('data_pegawai')->result();
+			$data['pegawai'] = $this->Penggajian_model->get_data('data_pegawai')->result();
 			$this->load->view('templatesAdmin/header', $data);
 			$this->load->view('formLogin');
 		} else {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 
-			$cek = $this->PenggajianModel->cek_login($username, $password);
+			$cek = $this->Penggajian_model->cek_login($username, $password);
 			if ($cek == FALSE) {
 				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
 				<strong>Username Atau Password Salah!</strong></div>');

@@ -70,7 +70,7 @@ class DataAbsensi extends CI_Controller
                 }
             }
 
-            $this->PenggajianModel->insert_batch('data_absensi', $simpan);
+            $this->Penggajian_model->insert_batch('data_absensi', $simpan);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Data ditambahkan!</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -6,7 +6,7 @@ class PotonganGaji extends CI_Controller
     public function index()
     {
         $data['title'] = "Potongan Gaji";
-        $data['potgaji'] = $this->PenggajianModel->get_data('potongan_gaji')->result();
+        $data['potgaji'] = $this->Penggajian_model->get_data('potongan_gaji')->result();
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/potonganGaji', $data);
@@ -38,7 +38,7 @@ class PotonganGaji extends CI_Controller
                 'jml_potongan' => $jml_potongan,
             );
 
-            $this->PenggajianModel->insert_data($data, 'potongan_gaji');
+            $this->Penggajian_model->insert_data($data, 'potongan_gaji');
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Ditambahkan!</strong>
             </div>');
@@ -76,7 +76,7 @@ class PotonganGaji extends CI_Controller
                 'id_potongan' => $id
             );
 
-            $this->PenggajianModel->update_data('potongan_gaji', $data, $where);
+            $this->Penggajian_model->update_data('potongan_gaji', $data, $where);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Data Berhasil Diupdate!</strong></div>');
             redirect('admin/potonganGaji');
@@ -96,7 +96,7 @@ class PotonganGaji extends CI_Controller
     public function deleteData($id)
     {
         $where = array('id_potongan' => $id);
-        $this->PenggajianModel->delete_data($where, 'potongan_gaji');
+        $this->Penggajian_model->delete_data($where, 'potongan_gaji');
         $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Data Berhasil Dihapus!</strong></div>');
         redirect('admin/potonganGaji');
