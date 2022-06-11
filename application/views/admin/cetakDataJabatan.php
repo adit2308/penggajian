@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <center>
-                        <h3>Nasi Cokot Nanta</h3>
+                        <h2>Delicious <span>Resto.<span></h2>
                         <h2>Kabupaten Bogor</h2>
                         <h5>Rukan Aries Niaga Blok A1 No 3A. Taman Aries no. telp (021) 589069.</h5>
                         <br />

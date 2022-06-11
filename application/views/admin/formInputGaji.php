@@ -2,11 +2,11 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo $tittle ?></h1>
     </div>
     <div class="card mb-3">
-        <div class="card-header" bg-primary text-white>
-            Filter Data Absensi pegawai
+        <div class="card-header" bg-primary texxt-white>
+            Input Gaji Pegawai
         </div>
         <div class="card-body">
 
@@ -35,14 +35,14 @@
                     <select class="form-control ml-3" name="tahun">
                         <option value="">--Pilih Tahun--</option>
                         <?php $tahun = date('Y');
-                        for ($i = 2017; $i < $tahun + 1; $i++) { ?>
+                        for ($i = 2022; $i < $tahun + 1; $i++) { ?>
                             <option value="<?php echo $i ?>"><?php echo $i ?></option>
 
                         <?php } ?>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary ml-3 ml-auto"><i class="fas fa-eye"></i>Tampilkan Data</button>
-                <a href="<?php echo base_url('admin/dataAbsensi/inputAbsensi') ?>" class="btn btn-success ml-3"><i class="fas fa-plus"></i>Input Kehadiran</a>
+                <button type="submit" class="btn btn-primary ml-3 ml-auto"><i class="fas fa-eye"></i>Generate</button>
+
             </form>
 
         </div>
@@ -68,10 +68,8 @@
         Tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
     </div>
 
-    <?php
-    $jml_data = count($absensi);
-    if ($jml_data > 0) { ?>
-
+    <form method="POST">
+        <button class="btn btn-success mb-3" type="submit" name="submit" value="submit">Simpan</button>
         <table class="table table-bordered table-striped">
             <tr>
                 <td class="text-center">No</td>
@@ -79,29 +77,28 @@
                 <td class="text-center">Nama pegawai</td>
                 <td class="text-center">Jenis Kelamin</td>
                 <td class="text-center">Jabatan</td>
-                <td class="text-center">Hadir</td>
-                <td class="text-center">Sakit</td>
-                <td class="text-center">Tanpa Keterangan</td>
+                <td class="text-center" width="6%">Tanpa Keterangan</td>
             </tr>
 
             <?php $no = 1;
-            foreach ($absensi as $b) : ?>
+            foreach ($input_absensi as $b) : ?>
                 <tr>
-                    <td class="text-center"><?php echo $no++ ?></td>
-                    <td class="text-center"><?php echo $b->nik ?></td>
-                    <td class="text-center"><?php echo $b->nama_pegawai ?></td>
-                    <td class="text-center"><?php echo $b->jenis_kelamin ?></td>
-                    <td class="text-center"><?php echo $b->nama_jabatan ?></td>
-                    <td class="text-center"><?php echo $b->hadir ?></td>
-                    <td class="text-center"><?php echo $b->sakit ?></td>
-                    <td class="text-center"><?php echo $b->tanpa_keterangan ?></td>
+                    <input type="hidden" name="bulan[]" class="form-control" value="<?php echo $bulantahun ?>">
+                    <input type="hidden" name="nik[]" class="form-control" value="<?php echo $b->nik ?>">
+                    <input type="hidden" name="nama_pegawai[]" class="form-control" value="<?php echo $b->nama_pegawai ?>">
+                    <input type="hidden" name="jenis_kelamin[]" class="form-control" value="<?php echo $b->jenis_kelamin ?>">
+                    <input type="hidden" name="nama_jabatan[]" class="form-control" value="<?php echo $b->nama_jabatan ?>">
+
+                    <td><?php echo $no++ ?></td>
+                    <td><?php echo $b->nik ?></td>
+                    <td><?php echo $b->nama_pegawai ?></td>
+                    <td><?php echo $b->jenis_kelamin ?></td>
+                    <td><?php echo $b->nama_jabatan ?></td>
+                    <td><input type="number" class="form-control" name="tanpa_keterangan[]"></td>
                 </tr>
+
             <?php endforeach; ?>
-
         </table><br><br><br><br><br>
-    <?php } else { ?>
-        <span class="badge badge-danger"><i class="fas fa-info-circle"></i>Data belum terisi, silahkan input data kehadiran pada bulan dan tahun yang anda pilih!</span>
-    <?php } ?>
-
+    </form>
 
 </div>

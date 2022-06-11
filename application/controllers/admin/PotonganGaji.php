@@ -12,39 +12,7 @@ class PotonganGaji extends CI_Controller
         $this->load->view('admin/potonganGaji', $data);
         $this->load->view('templatesAdmin/footer');
     }
-    public function tambahData()
-    {
-        $data['title'] = "Tambah Jenis Potongan";
-        $this->load->view('templatesAdmin/header', $data);
-        $this->load->view('templatesAdmin/sidebar');
-        $this->load->view('admin/formTambahPotonganGaji', $data);
-        $this->load->view('templatesAdmin/footer');
-    }
 
-    public function tambahDataAksi()
-    {
-        $this->_rules(); //function ini berfungsi untuk melakukan form_validation
-
-        if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke tambahData
-            $this->tambahData();
-        } else {
-            $potongan = $this->input->post('potongan');
-            $jml_potongan = $this->input->post('jml_potongan');
-
-
-            //setelah datanya dipanggil dengan method post, lalu disimpan di variable data
-            $data = array(
-                'potongan' => $potongan,
-                'jml_potongan' => $jml_potongan,
-            );
-
-            $this->Penggajian_model->insert_data($data, 'potongan_gaji');
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Data Berhasil Ditambahkan!</strong>
-            </div>');
-            redirect('admin/potonganGaji');
-        }
-    }
 
     public function updateData($id)
     {

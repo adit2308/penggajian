@@ -2,11 +2,11 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?php echo $tittle ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
     </div>
     <div class="card mb-3">
-        <div class="card-header" bg-primary texxt-white>
-            Input Absensi pegawai
+        <div class="card-header" bg-primary text-white>
+            Filter Data Input Gaji Pegawai
         </div>
         <div class="card-body">
 
@@ -41,8 +41,8 @@
                         <?php } ?>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary ml-3 ml-auto"><i class="fas fa-eye"></i>Generate</button>
-
+                <button type="submit" class="btn btn-primary ml-3 ml-auto"><i class="fas fa-eye"></i>Tampilkan Data</button>
+                <a href="<?php echo base_url('admin/dataInputGaji/inputGajiPegawai') ?>" class="btn btn-success ml-3"><i class="fas fa-plus"></i>Input Kehadiran</a>
             </form>
 
         </div>
@@ -68,43 +68,47 @@
         Tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
     </div>
 
-    <form method="POST">
-        <button class="btn btn-success mb-3" type="submit" name="submit" value="submit">Simpan</button>
+    <?php
+    $jml_data = count($absensi);
+    if ($jml_data > 0) { ?>
+        <?php echo $this->session->flashdata('pesan') ?>
+
         <table class="table table-bordered table-striped">
             <tr>
                 <td class="text-center">No</td>
-                <td class="text-center">nik</td>
+                <td class="text-center">Nik</td>
                 <td class="text-center">Nama pegawai</td>
                 <td class="text-center">Jenis Kelamin</td>
                 <td class="text-center">Jabatan</td>
-                <td class="text-center" width="8%">Hadir</td>
-                <td class="text-center" width="8%">Sakit</td>
-                <td class="text-center" width="6%">Tanpa Keterangan</td>
+                <td class="text-center">Tanpa Keterangan</td>
+                <td class="text-center">Action</td>
             </tr>
 
             <?php $no = 1;
-            foreach ($input_absensi as $b) : ?>
+            foreach ($absensi as $b) : ?>
                 <tr>
-                    <input type="hidden" name="bulan[]" class="form-control" value="<?php echo $bulantahun ?>">
-                    <input type="hidden" name="nik[]" class="form-control" value="<?php echo $b->nik ?>">
-                    <input type="hidden" name="nama_pegawai[]" class="form-control" value="<?php echo $b->nama_pegawai ?>">
-                    <input type="hidden" name="jenis_kelamin[]" class="form-control" value="<?php echo $b->jenis_kelamin ?>">
-                    <input type="hidden" name="nama_jabatan[]" class="form-control" value="<?php echo $b->nama_jabatan ?>">
-
-
-
-                    <td><?php echo $no++ ?></td>
-                    <td><?php echo $b->nik ?></td>
-                    <td><?php echo $b->nama_pegawai ?></td>
-                    <td><?php echo $b->jenis_kelamin ?></td>
-                    <td><?php echo $b->nama_jabatan ?></td>
-                    <td><input type="number" class="form-control" name="hadir[]" value="0"></td>
-                    <td><input type="number" class="form-control" name="sakit[]" value="0"></td>
-                    <td><input type="number" class="form-control" name="tanpa_keterangan[]" value="0"></td>
+                    <td class="text-center"><?php echo $no++ ?></td>
+                    <td class="text-center"><?php echo $b->nik ?></td>
+                    <td class="text-center"><?php echo $b->nama_pegawai ?></td>
+                    <td class="text-center"><?php echo $b->jenis_kelamin ?></td>
+                    <td class="text-center"><?php echo $b->nama_jabatan ?></td>
+                    <td class="text-center"><?php echo $b->tanpa_keterangan ?></td>
+                    <td>
+                        <center>
+                            <a onclick="return confirm('Konfirmasi Penghapusan Data')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataInputGaji/deleteData/' . $b->id_absensi) ?>">
+                                <i class="fas fa-trash"></i></a>
+                        </center>
+                    </td>
                 </tr>
-
             <?php endforeach; ?>
+
         </table><br><br><br><br><br>
-    </form>
+    <?php } else { ?>
+        <span class="badge badge-danger"><i class="fas fa-info-circle"></i>Data belum terisi, silahkan input data kehadiran pada bulan dan tahun yang anda pilih!</span>
+    <?php } ?>
+
 
 </div>
+<!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->

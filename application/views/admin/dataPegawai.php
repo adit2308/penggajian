@@ -20,29 +20,28 @@
                             <th class="text-center">Username</th>
                             <th class="text-center">Action</th>
                         </tr>
-                        <?php $no = 1;
-                        foreach ($pegawai as $p) : ?>
+                        <?php foreach ($pegawai as $p) : ?>
                             <tr>
-                                <td class="text-center"><?php echo $no++ ?></td>
-                                <td class="text-center"><?php echo $p->nik ?></td>
-                                <td class="text-center"><?php echo $p->nama_pegawai ?></td>
-                                <td class="text-center"><?php echo $p->jenis_kelamin ?></td>
-                                <td class="text-center"><?php echo $p->jabatan ?></td>
-                                <td class="text-center"><?php echo $p->tanggal_masuk ?></td>
-                                <td class="text-center"><?php echo $p->status ?></td>
+                                <td class="text-center"><?php echo ++$start; ?></td>
+                                <td class="text-center"><?php echo $p['nik'] ?></td>
+                                <td class="text-center"><?php echo $p['nama_pegawai']; ?></td>
+                                <td class="text-center"><?php echo $p['jenis_kelamin']; ?></td>
+                                <td class="text-center"><?php echo $p['jabatan']; ?></td>
+                                <td class="text-center"><?php echo $p['tanggal_masuk']; ?></td>
+                                <td class="text-center"><?php echo $p['status']; ?></td>
 
-                                <?php if ($p->hak_akses == '1') { ?>
+                                <?php if ($p['hak_akses'] == '1') { ?>
                                     <td class="text-center">Admin</td>
                                 <?php } else { ?>
                                     <td class="text-center">User</td>
                                 <?php } ?>
-                                <td class="text-center"><?php echo $p->username ?></td>
+                                <td class="text-center"><?php echo $p['username']; ?></td>
 
                                 <td>
                                     <center>
-                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPegawai/updateData/' . $p->id_pegawai) ?>">
+                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPegawai/updateData/' . $p['id_pegawai']) ?>">
                                             <i class="fas fa-edit"></i></a>
-                                        <a onclick="return confirm('Konfirmasi Penghapusan Data')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataPegawai/deleteData/' . $p->id_pegawai) ?>">
+                                        <a onclick="return confirm('Konfirmasi Penghapusan Data')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataPegawai/deleteData/' . $p['id_pegawai']) ?>">
                                             <i class="fas fa-trash"></i></a>
                                     </center>
                                 </td>
@@ -50,6 +49,7 @@
                             </tr>
                         <?php endforeach; ?>
                     </table>
+                    <?= $this->pagination->create_links(); ?>
                 </div>
                 <!-- /.container-fluid -->
 

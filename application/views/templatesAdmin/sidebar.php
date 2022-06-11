@@ -29,7 +29,7 @@
                         <h6 class="collapse-header">Master Data</h6>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPegawai') ?>">Data Pegawai</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataJabatan') ?>">Data Jabatan</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataAbsensi') ?>">Data Kehadiran</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataInputGaji') ?>">Data Input Gaji</a>
                     </div>
                 </div>
             </li>
@@ -43,7 +43,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Rekap Gaji</h6>
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataPenggajian') ?>">Data Gaji</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataPenggajian') ?>">Data Gaji Pegawai</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/PotonganGaji') ?>">Potongan Gaji</a>
                     </div>
                 </div>
@@ -60,7 +60,21 @@
                         <h6 class="collapse-header">Laporan</h6>
                         <a class="collapse-item" href="<?php echo base_url('admin/laporanJabatan') ?>">Cetak Data Jabatan</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/laporanPegawai') ?>">Cetak Data Pegawai</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/laporanGaji') ?>">Cetak Data Gaji</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataPenggajian') ?>">Cetak Data Gaji</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Nav Item - Laporan Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHome" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-copy"></i>
+                    <span>Edit HomePages</span>
+                </a>
+                <div id="collapseHome" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Edit HomePages</h6>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataPortfolio') ?>">Edit Menu Makanan</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataTeam') ?>">Edit Teams</a>
                     </div>
                 </div>
             </li>

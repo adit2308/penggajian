@@ -88,26 +88,6 @@
                     </div>
 
                     <div class="alert alert-success font-weight-bold ">Selamat Datang <?php echo $this->session->userdata('nama_pegawai') ?>, Anda Login Sebagai Admin</div>
-                    <div class="card" style="margin-bottom: 120px;">
-                        <div class="card-header font-weight-bold bg-primary text-white">
-                            Data Saya
-                        </div>
-                        <?php foreach ($saya as $s) : ?>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Nik : <?php echo  $s->nik ?></li>
-                                    <li class="list-group-item">Nama : <?php echo $s->nama_pegawai ?></li>
-                                    <li class="list-group-item">Nik : <?php echo $s->jenis_kelamin ?></li>
-                                    <?php if ($s->hak_akses == '1') { ?>
-                                        <li class="list-group-item">Jabatan : Admin</li>
-                                    <?php } else { ?>
-                                        <li class="list-group-item">Jabatan : Pegawai</li>
-                                    <?php } ?>
-                                </ul>
-
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
 
                 </div>
                 <!-- /.container-fluid -->

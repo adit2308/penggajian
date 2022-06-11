@@ -9,6 +9,57 @@ class Penggajian_model extends CI_Model
         return $this->db->get($table);
     }
 
+    public function getAllPegawai()
+    {
+
+        return $this->db->get('data_pegawai')->result_array();
+    }
+
+    public function getPegawai($limit, $start)
+    {
+
+        return $this->db->get('data_pegawai', $limit, $start)->result_array();
+    }
+
+    public function countAllPegawai()
+    {
+
+        return $this->db->get('data_pegawai')->num_rows();
+    }
+    public function getAllPortfolio1()
+    {
+
+        return $this->db->get('portfolio1')->result_array();
+    }
+    public function getAllPortfolio2()
+    {
+
+        return $this->db->get('portfolio2')->result_array();
+    }
+    public function getAllTeam1()
+    {
+
+        return $this->db->get('team1')->result_array();
+    }
+    public function getAllTeam2()
+    {
+
+        return $this->db->get('team2')->result_array();
+    }
+    public function getAllTeam3()
+    {
+
+        return $this->db->get('team3')->result_array();
+    }
+    public function getAllTeam4()
+    {
+
+        return $this->db->get('team4')->result_array();
+    }
+
+
+
+
     public function insert_data($data, $table)
     {
         $this->db->insert($table, $data);

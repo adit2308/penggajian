@@ -5,13 +5,25 @@ class Welcome extends CI_Controller
 {
 	public function index()
 	{
+
+		//Load model
+		$this->load->model('Penggajian_model', 'penggajian');
+
+		$data['portfolio1'] = $this->penggajian->getAllPortfolio1();
+		$data['team1'] = $this->penggajian->getAllTeam1();
+		$data['team2'] = $this->penggajian->getAllTeam2();
+		$data['team3'] = $this->penggajian->getAllTeam3();
+		$data['team4'] = $this->penggajian->getAllTeam4();
+
+
+
 		$this->_rules();
 		//function ini berfungsi untuk melakukan form_validation
 		if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke formLogin
-			$data['title'] = "Form Login";
+			$data['title'] = "Home";
 			$data['pegawai'] = $this->Penggajian_model->get_data('data_pegawai')->result();
 			$this->load->view('templatesAdmin/header', $data);
-			$this->load->view('formLogin');
+			$this->load->view('welcome');
 		} else {
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
@@ -39,11 +51,16 @@ class Welcome extends CI_Controller
 			}
 		}
 	}
+
+
+
 	public function _rules()
 	{
 		$this->form_validation->set_rules('username', 'username', 'required');
 		$this->form_validation->set_rules('password', 'password', 'required');
 	}
+
+
 	public function logout()
 	{
 		$this->session->sess_destroy();

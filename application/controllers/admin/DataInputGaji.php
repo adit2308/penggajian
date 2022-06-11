@@ -1,6 +1,6 @@
 <?php
 
-class DataAbsensi extends CI_Controller
+class DataInputGaji extends CI_Controller
 {
 
     public function __construct()
@@ -23,7 +23,7 @@ class DataAbsensi extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Data Absensi pegawai";
+        $data['title'] = "Data Input Gaji";
 
         if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
             $bulan = $_GET['bulan'];
@@ -39,16 +39,15 @@ class DataAbsensi extends CI_Controller
             FROM data_absensi
             INNER JOIN data_pegawai ON data_absensi.nik = data_pegawai.nik
             INNER JOIN data_jabatan ON data_pegawai.jabatan = data_jabatan.nama_jabatan  
-            WHERE data_absensi.bulan='$bulantahun' 
-            ORDER BY data_pegawai.nama_pegawai ASC")->result();
+            WHERE data_absensi.bulan='$bulantahun'")->result();
 
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
-        $this->load->view('admin/dataAbsensi', $data);
+        $this->load->view('admin/dataInputGaji', $data);
         $this->load->view('templatesAdmin/footer');
     }
 
-    public function inputAbsensi()
+    public function inputGajiPegawai()
     {
 
         if ($this->input->post('submit', TRUE) == 'submit') {
@@ -63,8 +62,6 @@ class DataAbsensi extends CI_Controller
                         'nama_pegawai'        => $post['nama_pegawai'][$key],
                         'jenis_kelamin'        => $post['jenis_kelamin'][$key],
                         'nama_jabatan'         => $post['nama_jabatan'][$key],
-                        'hadir'                => $post['hadir'][$key],
-                        'sakit'                 => $post['sakit'][$key],
                         'tanpa_keterangan'     => $post['tanpa_keterangan'][$key],
                     );
                 }
@@ -78,11 +75,11 @@ class DataAbsensi extends CI_Controller
                 </button>
             </div>');
 
-            redirect('admin/dataAbsensi');
+            redirect('admin/dataInputGaji');
         }
 
 
-        $data['tittle'] = "Input Absensi";
+        $data['tittle'] = "Input Gaji Pegawai";
         if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
             $bulan = $_GET['bulan'];
             $tahun = $_GET['tahun'];
@@ -99,7 +96,18 @@ class DataAbsensi extends CI_Controller
             ORDER BY data_pegawai.nama_pegawai ASC")->result();
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
-        $this->load->view('admin/formInputAbsensi', $data);
+        $this->load->view('admin/formInputGaji', $data);
         $this->load->view('templatesAdmin/footer');
+    }
+
+
+
+    public function deleteData($id)
+    {
+        $where = array('id_absensi' => $id);
+        $this->Penggajian_model->delete_data($where, 'data_absensi');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Data Berhasil Dihapus!</strong></div>');
+        redirect('admin/dataAbsensi');
     }
 }

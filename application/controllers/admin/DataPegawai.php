@@ -14,7 +14,52 @@ class DataPegawai extends CI_Controller
     public function index()
     {
         $data['title'] = "Data Pegawai";
-        $data['pegawai'] = $this->Penggajian_model->get_data('data_pegawai')->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+
+        //Load model
+        $this->load->model('Penggajian_model', 'penggajian');
+
+        //Pagination
+        $this->load->library('pagination');
+        $config['base_url'] = site_url('admin/dataPegawai/index');
+        $config['total_rows'] = $this->penggajian->countAllPegawai();
+        $config['per_page'] = 5;
+
+        //styling
+        $config['full_tag_open'] = '<nav aria-label="Page navigation example"><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></nav>';
+
+        $config['first_link'] = 'First';
+        $config['first_tag_open'] = '<li class="page-item">';
+        $config['first_tag_close'] = '</li>';
+
+        $config['last_link'] = 'Last';
+        $config['last_tag_open'] = '<li class="page-item">';
+        $config['last_tag_close'] = '</li>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        //initialize
+        $this->pagination->initialize($config);
+
+
+
+        $data['start'] = $this->uri->segment(4);
+        $data['pegawai'] = $this->penggajian->getPegawai($config['per_page'], $data['start']);
+        //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/dataPegawai', $data);
