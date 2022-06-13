@@ -40,23 +40,22 @@
             </tr>
         </table>
         <hr style=" border-width: 5px; color: black">
-        <br>
-        <br>
-        <h4>Daftar Data Jabatan</h4>
+        <h3><u>Laporan Data Jabatan</u></h3>
+        <?php
+        if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
+            $bulan = $_GET['bulan'];
+            $tahun = $_GET['tahun'];
+            $bulantahun = $bulan . $tahun;
+        } else {
+            $bulan = date('m');
+            $tahun = date('Y');
+            $bulantahun = $bulan . $tahun;
+        }
+        ?>
+        <p>Periode Laporan Data Jabatan Bulan <?php echo $bulan ?>, Tahun <?php echo $tahun ?></p>
     </center>
     <hr>
-    <?php
-    if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
-        $bulan = $_GET['bulan'];
-        $tahun = $_GET['tahun'];
-        $bulantahun = $bulan . $tahun;
-    } else {
-        $bulan = date('m');
-        $tahun = date('Y');
-        $bulantahun = $bulan . $tahun;
-    }
-    ?>
-    <p>Periode Laporan Data Jabatan Bulan <?php echo $bulan ?>, Tahun <?php echo $tahun ?></p>
+
     <table class="table table-bordered table-striped">
         <tr>
             <th class="text-center">No</th>
@@ -89,10 +88,10 @@
             <td width="200px">
                 <p> Bogor, <?php echo date("d M Y") ?>
                     <br>
-                    Pemilik
+                    Direktur
                 </p>
                 <img src="<?php echo base_url() ?>/assets/img/tanda_tangan.png" class="mb" style="width: 100px; height: 100px;">
-                <p>Pamungkas</p>
+                <p>dr. Pamungkas</p>
 
 
 

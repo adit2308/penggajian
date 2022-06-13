@@ -2,7 +2,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Nasi Cokot Nanta 2022</span>
+                        <span>Copyright &copy; Rumah Sakit Umum 2022</span>
                     </div>
                 </div>
             </footer>
@@ -37,6 +37,8 @@
             <!-- Page level custom scripts -->
             <script src="<?php echo base_url() ?>/assets/js/demo/chart-area-demo.js"></script>
             <script src="<?php echo base_url() ?>/assets/js/demo/chart-pie-demo.js"></script>
+
+
 
             </body>
 

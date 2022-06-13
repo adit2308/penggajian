@@ -36,7 +36,7 @@
                         <select class="form-control" name="tahun">
                             <option value="">--Pilih Tahun--</option>
                             <?php $tahun = date('Y');
-                            for ($i = 2022; $i < $tahun + 5; $i++) { ?>
+                            for ($i = 2022; $i < $tahun + 1; $i++) { ?>
                                 <option value="<?php echo $i ?>"><?php echo $i ?></option>
                             <?php } ?>
                         </select>

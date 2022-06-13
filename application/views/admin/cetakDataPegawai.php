@@ -40,23 +40,22 @@
             </tr>
         </table>
         <hr style=" border-width: 5px; color: black">
-        <br>
-        <br>
-        <h4>Daftar Data Pegawai</h4>
+        <h3><u>Laporan Data Pegawai</u></h3>
+        <?php
+        if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
+            $bulan = $_GET['bulan'];
+            $tahun = $_GET['tahun'];
+            $bulantahun = $bulan . $tahun;
+        } else {
+            $bulan = date('m');
+            $tahun = date('Y');
+            $bulantahun = $bulan . $tahun;
+        }
+        ?>
+        <p>Periode Laporan Data Pegawai Bulan <?php echo $bulan ?>, Tahun <?php echo $tahun ?></p>
     </center>
     <hr>
-    <?php
-    if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
-        $bulan = $_GET['bulan'];
-        $tahun = $_GET['tahun'];
-        $bulantahun = $bulan . $tahun;
-    } else {
-        $bulan = date('m');
-        $tahun = date('Y');
-        $bulantahun = $bulan . $tahun;
-    }
-    ?>
-    <p>Periode Laporan Data Pegawai Bulan <?php echo $bulan ?>, Tahun <?php echo $tahun ?></p>
+
     <table class="table table-bordered table-striped">
         <tr>
             <th class="text-center">No</th>

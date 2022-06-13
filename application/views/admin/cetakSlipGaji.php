@@ -11,7 +11,7 @@
     </style>
 </head>
 
-<body>
+<body onload="print()">
     <center>
 
         <table>
@@ -30,7 +30,10 @@
             </tr>
         </table>
         <hr style=" border-width: 5px; color: black">
-        <h4>Slip Gaji Pegawai</h4>
+        <h3><u>Slip Gaji Pegawai</u></h3>
+        <?php foreach ($print_slip as $ps) : ?>
+            <p>Periode Bulan <?php echo substr($ps->bulan, 0, 2) ?>, Tahun <?php echo substr($ps->bulan, 2, 4) ?></p>
+        <?php endforeach; ?>
     </center>
 
     <?php foreach ($potongan as $p) {
@@ -42,29 +45,19 @@
 
         <table style="width: 100%">
             <tr>
-                <td width="20%">Nama pegawai</td>
-                <td width="2%">:</td>
-                <td><?php echo $ps->nama_pegawai ?></td>
-            </tr>
-            <tr>
                 <td>NIK</td>
                 <td>:</td>
                 <td><?php echo $ps->nik ?></td>
             </tr>
             <tr>
+                <td width="20%">Nama pegawai</td>
+                <td width="2%">:</td>
+                <td><?php echo $ps->nama_pegawai ?></td>
+            </tr>
+            <tr>
                 <td>Jabatan</td>
                 <td>:</td>
                 <td><?php echo $ps->nama_jabatan ?></td>
-            </tr>
-            <tr>
-                <td>Bulan</td>
-                <td>:</td>
-                <td><?php echo substr($ps->bulan, 0, 2) ?></td>
-            </tr>
-            <tr>
-                <td>Tahun</td>
-                <td>:</td>
-                <td><?php echo substr($ps->bulan, 2, 4) ?></td>
             </tr>
         </table>
 
@@ -107,6 +100,8 @@
                     <p>Pegawai</p>
                     <br>
                     <br>
+                    <br>
+                    <br>
                     <p class="font-weight-bold"><?php echo $ps->nama_pegawai ?></p>
                 </td>
 
@@ -126,7 +121,3 @@
 </body>
 
 </html>
-
-<script type="text/javascript">
-    window.print();
-</script>

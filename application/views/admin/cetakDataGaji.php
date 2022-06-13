@@ -31,34 +31,30 @@
                 </td>
                 <td>
                     <center>
-                        <h2>Delicious <span>Resto.<span></h2>
+                        <h2>RUMAH SAKIT UMUM</h2>
                         <h2>Kabupaten Bogor</h2>
-                        <h5>Rukan Aries Niaga Blok A1 No 3A. Taman Aries no. telp (021) 589069.</h5>
-                        <h5>Website : https://www.rumahsakitumum.com</h5>
-                        <br />
-                        <h4>Daftar Gaji Pegawai</h4>
+                        <h5>Gedung Rumah Sakit Umum Kabupaten Bogor</h5>
+                        <h5>Jl. Aries Niaga Blok A1 No 3A. Taman Aries no. telp (021) 589069.</h5>
                     </center>
                 </td>
             </tr>
         </table>
-
-
+        <hr style=" border-width: 5px; color: black">
+        <h3><u>Laporan Data Gaji Pegawai</u></h3>
+        <?php
+        if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
+            $bulan = $_GET['bulan'];
+            $tahun = $_GET['tahun'];
+            $bulantahun = $bulan . $tahun;
+        } else {
+            $bulan = date('m');
+            $tahun = date('Y');
+            $bulantahun = $bulan . $tahun;
+        }
+        ?>
+        <p>Periode Laporan Data Gaji Pegawai Bulan <?php echo $bulan ?>, Tahun <?php echo $tahun ?></p>
     </center>
     <hr>
-    <?php
-
-    if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
-        $bulan = $_GET['bulan'];
-        $tahun = $_GET['tahun'];
-        $bulantahun = $bulan . $tahun;
-    } else {
-        $bulan = date('m');
-        $tahun = date('Y');
-        $bulantahun = $bulan . $tahun;
-    }
-
-    ?>
-    <p>Periode Gaji Untuk Bulan <?php echo $bulan ?>, Tahun <?php echo $tahun ?></p>
     <table class="table table-bordered table-striped">
         <tr>
             <th class="text-center">No</th>

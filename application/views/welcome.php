@@ -23,7 +23,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
-                Delicious <span>Resto.<span>
+                <i class="fa-regular fa-hospital"></i>
+                Pillbox Hill <span>Medical Center<span>.
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -31,21 +32,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#loginModal" data-bs-toggle="modal">Login</a></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold" href="#portfolio">Service</a></li>
+                    <li class="nav-item"><a class="nav-link font-weight-bold" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link active bg-light text-dark rounded font-weight-bold" href="#loginModal" data-bs-toggle="modal">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
-
-    <!-- Masthead-->
+    <!-- Masthead Baru -->
     <header class="masthead">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Our Restaurant!</div>
-            <!-- <div class="masthead-heading text-uppercase">It's Nice To Meet You</div> -->
+            <div class="masthead-subheading">Welcome To Our Hospital!</div>
             <div class="masthead-heading text-uppercase"> <span class="auto-type"><span></div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">Tell Me More</a>
         </div>
@@ -62,13 +60,13 @@
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/7.jpg" alt="..." />
-                        </a>
                         <?php foreach ($portfolio1 as $p1) : ?>
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/7.jpg" alt="..." />
+                            </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading"><?php echo $p1['nama_portfolio'] ?></div>
                                 <div class="portfolio-caption-subheading text-muted"><?php echo $p1['deskripsi'] ?></div>
@@ -396,7 +394,7 @@
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <h2 class="text-uppercase text-center">Login</h2>
-                                <p class="item-intro text-muted text-center">Lorem ipsum dolor sit amet consectetur.</p>
+                                <p class="item-intro text-muted text-center">Silahkan Login Terlebih Dahulu.</p>
                                 <div class="row">
 
                                     <div class="col-lg-12 mt-3">

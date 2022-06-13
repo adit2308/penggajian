@@ -13,15 +13,47 @@
                         </div>
                         <?php foreach ($pegawai as $p) : ?>
                             <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Nik : <?php echo  $p->nik ?></li>
-                                    <li class="list-group-item">Nama : <?php echo $p->nama_pegawai ?></li>
-                                    <li class="list-group-item">Nik : <?php echo $p->jenis_kelamin ?></li>
-                                    <li class="list-group-item">Jabatan : <?php echo $p->jabatan ?></li>
-                                    <li class="list-group-item">Tanggal Masuk : <?php echo $p->tanggal_masuk ?></li>
-                                    <li class="list-group-item">Status : <?php echo $p->status ?></li>
-                                </ul>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img style="width: 250px;" src="<?= base_url('assets/photo/' . $p->photo) ?>">
+                                    </div>
 
+                                    <div class="col-md-7">
+                                        <table class="table">
+                                            <tr>
+                                                <td>NIK</td>
+                                                <td>:</td>
+                                                <td><?= $p->nik ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nama Pegawai</td>
+                                                <td>:</td>
+                                                <td><?= $p->nama_pegawai ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jenis Kelamin</td>
+                                                <td>:</td>
+                                                <td><?= $p->jenis_kelamin ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jabatan</td>
+                                                <td>:</td>
+                                                <td><?= $p->jabatan ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tanggal Masuk</td>
+                                                <td>:</td>
+                                                <td><?= $p->tanggal_masuk ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>:</td>
+                                                <td><?= $p->status ?></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         <?php endforeach; ?>
                     </div>
