@@ -196,16 +196,15 @@ class DataPegawai extends CI_Controller
 
     public function _rules()
     {
-        $this->form_validation->set_rules('nik', 'nik', 'required|trim|is_unique[data_pegawai.nik]');
+        $this->form_validation->set_rules('nik', 'nik', 'required');
         $this->form_validation->set_rules('nama_pegawai', 'nama pegawai', 'required');
         $this->form_validation->set_rules('jenis_kelamin', 'jenis kelamin', 'required');
         $this->form_validation->set_rules('jabatan', 'jabatan', 'required');
         $this->form_validation->set_rules('tanggal_masuk', 'tanggal masuk', 'required');
         $this->form_validation->set_rules('status', 'status', 'required');
         $this->form_validation->set_rules('hak_akses', 'hak akses', 'required');
-        $this->form_validation->set_rules('username', 'username', 'required|trim|is_unique[data_pegawai.username]');
+        $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');
-        $this->form_validation->set_rules('photo', 'photo', 'required');
     }
 
     public function deleteData($id)

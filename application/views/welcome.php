@@ -52,10 +52,13 @@
     <!-- Portfolio Grid-->
     <section class="page-section bg-light" id="portfolio">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Menu</h2>
-                <h3 class="section-subheading text-muted">Makanan Terpopuler di Delicious <span>Resto.<span></h3>
-            </div>
+            <?php foreach ($portfolio as $p) : ?>
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase"><?php echo $p['nama_portfolio'] ?></h2>
+                    <h3 class="section-subheading text-muted"><?php echo $p['deskripsi'] ?><span></h3>
+                </div>
+            <?php endforeach; ?>
+
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 1-->
@@ -65,7 +68,7 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/7.jpg" alt="..." />
+                                <img class="img-fluid" src="<?= base_url() . 'assets/portfolio/' . $p1['photo'] ?>" alt="..." />
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading"><?php echo $p1['nama_portfolio'] ?></div>
@@ -77,16 +80,19 @@
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <!-- Portfolio item 2-->
                     <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        <?php foreach ($portfolio2 as $p2) : ?>
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="<?= base_url() . 'assets/portfolio/' . $p2['photo'] ?>" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading"><?php echo $p2['nama_portfolio'] ?></div>
+                                <div class="portfolio-caption-subheading text-muted"><?php echo $p2['deskripsi'] ?></div>
                             </div>
-                            <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/8.jpg" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">NASI DAGING</div>
-                            <div class="portfolio-caption-subheading text-muted">Daging Sapi Khas Galang</div>
-                        </div>
+                        <?php endforeach; ?>
+
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">

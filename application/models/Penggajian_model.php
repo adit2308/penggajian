@@ -26,11 +26,19 @@ class Penggajian_model extends CI_Model
 
         return $this->db->get('data_pegawai')->num_rows();
     }
+
+    public function getAllPortfolio()
+    {
+
+        return $this->db->get('portfolio')->result_array();
+    }
+
     public function getAllPortfolio1()
     {
 
         return $this->db->get('portfolio1')->result_array();
     }
+
     public function getAllPortfolio2()
     {
 

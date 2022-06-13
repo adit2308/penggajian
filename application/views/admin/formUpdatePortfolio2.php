@@ -8,11 +8,11 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <?php foreach ($portfolio1 as $p) : ?>
+                            <?php foreach ($portfolio2 as $p) : ?>
                                 <!--foreach/perulangan berguna untuk mengambil data dari query table-->
                                 <!-- Disini kita baca datanya dengan method POST sesuai pada controllers/admin/dataJabatan-->
 
-                                <?php echo form_open_multipart('admin/dataPortfolio/updateDataAksi1') ?>
+                                <?php echo form_open_multipart('admin/dataPortfolio/updateDataAksi2') ?>
                                 <div class="form-group">
                                     <label>Judul</label>
                                     <input type="hidden" name="id_portfolio" class="form-control" value="<?php echo $p->id_portfolio ?>">

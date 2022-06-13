@@ -76,7 +76,9 @@
                 <div id="collapseHome" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Edit HomePages</h6>
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataPortfolio') ?>">Edit Menu Makanan</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataJudulPortfolio') ?>">Edit Judul HomePage</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataJudulPortfolio') ?>">Edit Judul Portfolio</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataPortfolio') ?>">Edit Portfolio</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataTeam') ?>">Edit Teams</a>
                     </div>
                 </div>

@@ -9,7 +9,9 @@ class Welcome extends CI_Controller
 		//Load model
 		$this->load->model('Penggajian_model', 'penggajian');
 
+		$data['portfolio'] = $this->penggajian->getAllPortfolio();
 		$data['portfolio1'] = $this->penggajian->getAllPortfolio1();
+		$data['portfolio2'] = $this->penggajian->getAllPortfolio2();
 		$data['team1'] = $this->penggajian->getAllTeam1();
 		$data['team2'] = $this->penggajian->getAllTeam2();
 		$data['team3'] = $this->penggajian->getAllTeam3();
