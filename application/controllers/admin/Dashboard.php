@@ -25,7 +25,6 @@ class Dashboard extends CI_Controller
         $data['absensi'] = $absensi->num_rows();
 
         $id = $this->session->userdata('id_pegawai');
-        $data['saya'] = $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai = '$id'")->result();
 
 
         // berfungsi untuk memanggil view, yang berguna untuk menata file url

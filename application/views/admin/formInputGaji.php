@@ -94,7 +94,7 @@
                     <td><?php echo $b->nama_pegawai ?></td>
                     <td><?php echo $b->jenis_kelamin ?></td>
                     <td><?php echo $b->nama_jabatan ?></td>
-                    <td><input type="number" class="form-control" name="tanpa_keterangan[]"></td>
+                    <td><input type="number" class="form-control" name="tanpa_keterangan[]" value="0"></td>
                 </tr>
 
             <?php endforeach; ?>

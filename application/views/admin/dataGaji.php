@@ -2,7 +2,7 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?php echo $tittle ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
 
     </div>
 
@@ -37,13 +37,29 @@
                     <select class="form-control ml-3" name="tahun">
                         <option value="">--Pilih Tahun--</option>
                         <?php $tahun = date('Y');
-                        for ($i = 2022; $i < $tahun + 2; $i++) { ?>
+                        for ($i = 2022; $i < $tahun + 1; $i++) { ?>
                             <option value="<?php echo $i ?>"><?php echo $i ?></option>
 
                         <?php } ?>
                     </select>
                 </div>
+                <?php
+                if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
+                    $bulan = $_GET['bulan'];
+                    $tahun = $_GET['tahun'];
+                    $bulantahun = $bulan . $tahun;
+                } else {
+                    $bulan = date('m');
+                    $tahun = date('Y');
+                    $bulantahun = $bulan . $tahun;
+                }
+                ?>
                 <button type="submit" class="btn btn-primary ml-3 ml-auto"><i class="fas fa-eye"></i>Tampilkan Data</button>
+
+                <?php if (count($gaji) > 0) { ?>
+                    <a href="<?php echo base_url('admin/dataPenggajian/cetakGaji?bulan=' . $bulan), '&tahun=' . $tahun ?>" class="btn btn-success ml-3"><i class="fas fa-print"></i>Cetak Daftar Gaji</a>
+                <?php }  ?>
+
 
             </form>
 
@@ -108,9 +124,6 @@
                         <td>Rp.<?php echo number_format($g->uang_makan, 0, ',', '.') ?></td>
                         <td>Rp.<?php echo number_format($potongan, 0, ',', '.') ?></td>
                         <td>Rp.<?php echo number_format($g->gaji_pokok + $g->tj_transport + $g->uang_makan - $potongan, 0, ',', '.') ?></td>
-
-
-
                     </tr>
 
                 <?php endforeach; ?>
@@ -120,7 +133,7 @@
     <?php } else { ?>
         <span class="badge badge-danger">
             <i class="fas fa-info-circle"></i>
-            Data belum terisi, silahkan input data kehadiran pada bulan dan tahun yang anda pilih!
+            Data belum terisi, silahkan input data gaji terlebih dahulu pada bulan dan tahun yang anda pilih!
         </span>
     <?php } ?>
 

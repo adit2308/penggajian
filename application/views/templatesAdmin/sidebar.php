@@ -29,7 +29,6 @@
                         <h6 class="collapse-header">Master Data</h6>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPegawai') ?>">Data Pegawai</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataJabatan') ?>">Data Jabatan</a>
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataInputGaji') ?>">Data Input Gaji</a>
                     </div>
                 </div>
             </li>
@@ -38,11 +37,12 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Rekap Gaji</span>
+                    <span>Penggajian</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Rekap Gaji</h6>
+                        <h6 class="collapse-header">Penggajian</h6>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataInputGaji') ?>">Input Gaji</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPenggajian') ?>">Data Gaji Pegawai</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/PotonganGaji') ?>">Potongan Gaji</a>
                     </div>
@@ -61,6 +61,8 @@
                         <a class="collapse-item" href="<?php echo base_url('admin/laporanJabatan') ?>">Cetak Data Jabatan</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/laporanPegawai') ?>">Cetak Data Pegawai</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPenggajian') ?>">Cetak Data Gaji</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/slipGaji') ?>">Cetak Slip Gaji Pegawai</a>
+
                     </div>
                 </div>
             </li>
@@ -107,7 +109,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Topbar -->
 
-                    <h4 class="font-weight-bold">Nasi Cokot Nanta</h4>
+                    <h4 class="font-weight-bold">Rumah Sakit Umum</h4>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -116,8 +118,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Selamat Datang, <?php echo $this->session->userdata('nama_pegawai') ?></span>
-                                <img class="img-profile rounded-circle" src="<?php echo base_url('') ?>/assets/img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small font-weight-bold">Selamat Datang, <?php echo $this->session->userdata('nama_pegawai') ?></span>
+                                <img class="img-profile rounded-circle" src="<?php echo base_url('') ?>/assets/img/avatar.png">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

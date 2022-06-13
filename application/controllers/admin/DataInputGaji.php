@@ -23,7 +23,7 @@ class DataInputGaji extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Data Input Gaji";
+        $data['title'] = "Input Gaji";
 
         if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
             $bulan = $_GET['bulan'];

@@ -18,6 +18,7 @@
                             <th class="text-center">Status</th>
                             <th class="text-center">Hak Akses</th>
                             <th class="text-center">Username</th>
+                            <th class="text-center">Photo</th>
                             <th class="text-center">Action</th>
                         </tr>
                         <?php foreach ($pegawai as $p) : ?>
@@ -36,6 +37,9 @@
                                     <td class="text-center">User</td>
                                 <?php } ?>
                                 <td class="text-center"><?php echo $p['username']; ?></td>
+
+                                <td class="text-center"><img src="<?= base_url() . 'assets/photo/' . $p['photo'] ?>" width="75px"></td>
+
 
                                 <td>
                                     <center>

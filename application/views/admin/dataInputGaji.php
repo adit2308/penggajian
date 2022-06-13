@@ -6,7 +6,7 @@
     </div>
     <div class="card mb-3">
         <div class="card-header" bg-primary text-white>
-            Filter Data Input Gaji Pegawai
+            Filter Input Gaji Pegawai
         </div>
         <div class="card-body">
 
@@ -42,7 +42,7 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary ml-3 ml-auto"><i class="fas fa-eye"></i>Tampilkan Data</button>
-                <a href="<?php echo base_url('admin/dataInputGaji/inputGajiPegawai') ?>" class="btn btn-success ml-3"><i class="fas fa-plus"></i>Input Kehadiran</a>
+                <a href="<?php echo base_url('admin/dataInputGaji/inputGajiPegawai') ?>" class="btn btn-success ml-3"><i class="fas fa-plus"></i>Input Gaji</a>
             </form>
 
         </div>
@@ -64,7 +64,7 @@
 
 
     <div class="alert alert-info">
-        Menampilkan Data Kehadiran Pegawai Bulan: <span class="font-weight-bold"><?php echo $bulan ?></span>
+        Menampilkan Data Pegawai Yang Menerima Gaji Pada Bulan: <span class="font-weight-bold"><?php echo $bulan ?></span>
         Tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
     </div>
 
@@ -104,7 +104,7 @@
 
         </table><br><br><br><br><br>
     <?php } else { ?>
-        <span class="badge badge-danger"><i class="fas fa-info-circle"></i>Data belum terisi, silahkan input data kehadiran pada bulan dan tahun yang anda pilih!</span>
+        <span class="badge badge-danger"><i class="fas fa-info-circle"></i>Data belum terisi, silahkan input data gaji terlebih dahulu pada bulan dan tahun yang anda pilih!</span>
     <?php } ?>
 
 

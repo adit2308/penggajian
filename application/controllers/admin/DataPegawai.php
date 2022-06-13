@@ -89,7 +89,20 @@ class DataPegawai extends CI_Controller
             $hak_akses         = $this->input->post('hak_akses');
             $username         = $this->input->post('username');
             $password        = $this->input->post('password');
+            $photo              = $_FILES['photo']['name'];
+            if ($photo = '') {
+            } else {
+                $config['upload_path']  = './assets/photo';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
 
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    echo "Photo Gagal diUpload!";
+                    die();
+                } else {
+                    $photo = $this->upload->data('file_name');
+                }
+            }
 
             $data = array(
                 'nik'           => $nik,
@@ -101,6 +114,8 @@ class DataPegawai extends CI_Controller
                 'hak_akses'        => $hak_akses,
                 'username'        => $username,
                 'password'        => $password,
+                'photo'      => $photo
+
             );
 
             $this->Penggajian_model->insert_data($data, 'data_pegawai');
@@ -140,7 +155,18 @@ class DataPegawai extends CI_Controller
             $hak_akses         = $this->input->post('hak_akses');
             $username         = $this->input->post('username');
             $password        = $this->input->post('password');
-
+            $photo              = $_FILES['photo']['name'];
+            if ($photo) {
+                $config['upload_path']  = './assets/photo';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    $photo = $this->upload->data('file_name');
+                    $this->db->set('photo', $photo);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
 
             $data = array(
                 'nik'           => $nik,
@@ -152,6 +178,8 @@ class DataPegawai extends CI_Controller
                 'hak_akses'     => $hak_akses,
                 'username'      => $username,
                 'password'      => $password,
+                'photo'      => $photo
+
             );
 
             $where = array(

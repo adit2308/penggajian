@@ -31,17 +31,18 @@
                 </td>
                 <td>
                     <center>
-                        <h2>Delicious <span>Resto.<span></h2>
+                        <h2>RUMAH SAKIT UMUM</h2>
                         <h2>Kabupaten Bogor</h2>
-                        <h5>Rukan Aries Niaga Blok A1 No 3A. Taman Aries no. telp (021) 589069.</h5>
-                        <br />
-                        <h4>Daftar Data Pegawai</h4>
+                        <h5>Gedung Rumah Sakit Umum Kabupaten Bogor</h5>
+                        <h5>Jl. Aries Niaga Blok A1 No 3A. Taman Aries no. telp (021) 589069.</h5>
                     </center>
                 </td>
             </tr>
         </table>
-
-
+        <hr style=" border-width: 5px; color: black">
+        <br>
+        <br>
+        <h4>Daftar Data Pegawai</h4>
     </center>
     <hr>
     <?php
@@ -92,13 +93,10 @@
             <td width="200px">
                 <p> Bogor, <?php echo date("d M Y") ?>
                     <br>
-                    Pemilik
+                    Direktur
                 </p>
                 <img src="<?php echo base_url() ?>/assets/img/tanda_tangan.png" class="mb" style="width: 100px; height: 100px;">
-                <p>Pamungkas</p>
-
-
-
+                <p>dr. Pamungkas</p>
             </td>
         </tr>
     </table>

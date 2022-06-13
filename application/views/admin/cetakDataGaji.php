@@ -88,11 +88,11 @@
                 <td><?php echo $g->nama_pegawai ?></td>
                 <td><?php echo $g->jenis_kelamin ?></td>
                 <td><?php echo $g->nama_jabatan ?></td>
-                <td>Rp. <?php echo number_format($g->gaji_pokok, 0, ',', '.') ?></td>
-                <td>Rp. <?php echo number_format($g->tj_transport, 0, ',', '.') ?></td>
-                <td>Rp. <?php echo number_format($g->uang_makan, 0, ',', '.') ?></td>
-                <td>Rp. <?php echo number_format($potongan, 0, ',', '.') ?></td>
-                <td>Rp. <?php echo number_format($g->gaji_pokok + $g->tj_transport - $g->uang_makan - $potongan, 0, ',', '.') ?></td>
+                <td>Rp.<?php echo number_format($g->gaji_pokok, 0, ',', '.') ?></td>
+                <td>Rp.<?php echo number_format($g->tj_transport, 0, ',', '.') ?></td>
+                <td>Rp.<?php echo number_format($g->uang_makan, 0, ',', '.') ?></td>
+                <td>Rp.<?php echo number_format($potongan, 0, ',', '.') ?></td>
+                <td>Rp.<?php echo number_format($g->gaji_pokok + $g->tj_transport + $g->uang_makan - $potongan, 0, ',', '.') ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
