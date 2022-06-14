@@ -105,8 +105,8 @@
                             <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/9.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">NASI COKOT</div>
-                            <div class="portfolio-caption-subheading text-muted">Menu Andalan Galang</div>
+                            <div class="portfolio-caption-heading">Farmasi</div>
+                            <div class="portfolio-caption-subheading text-muted">Obat-obatan dan Alat Kesehatan</div>
                         </div>
                     </div>
                 </div>
@@ -120,8 +120,8 @@
                             <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/10.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">NASI LEMAK</div>
-                            <div class="portfolio-caption-subheading text-muted">Teri Import dari Amerika</div>
+                            <div class="portfolio-caption-heading">Hemodialisasi</div>
+                            <div class="portfolio-caption-subheading text-muted">Pelayanan Cuci Darah</div>
                         </div>
                     </div>
                 </div>
@@ -132,11 +132,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/11.jpeg" alt="..." />
+                            <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/11.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">NASI GORENG</div>
-                            <div class="portfolio-caption-subheading text-muted">Telor dan Daging Suwir</div>
+                            <div class="portfolio-caption-heading">Rawat Inap</div>
+                            <div class="portfolio-caption-subheading text-muted">Pelayanan untuk Observasi, dan Lain-lain.</div>
                         </div>
                     </div>
                 </div>
@@ -147,11 +147,11 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/12.jpg" alt="..." />
+                            <img class="img-fluid" src="<?php echo base_url() ?>/assets/img/portfolio/12.png" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">NASI RENDANG</div>
-                            <div class="portfolio-caption-subheading text-muted">Daging Rendang Empuk</div>
+                            <div class="portfolio-caption-heading">Radiologi</div>
+                            <div class="portfolio-caption-subheading text-muted">Menggunakan Teknologi Canggih</div>
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                 <div class="col-lg-3">
                     <?php foreach ($team1 as $t1) : ?>
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="<?php echo base_url() ?>/assets/img/team/g.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t1['photo'] ?>" alt="..." />
                             <h4><?php echo $t1['nama'] ?></h4>
                             <p><?php echo $t1['npm'] ?></p>
                         </div>
@@ -181,7 +181,7 @@
                 <div class="col-lg-3">
                     <?php foreach ($team2 as $t2) : ?>
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="<?php echo base_url() ?>/assets/img/team/d.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t2['photo'] ?>" alt="..." />
                             <h4><?php echo $t2['nama'] ?></h4>
                             <p><?php echo $t2['npm'] ?></p>
                         </div>
@@ -191,16 +191,17 @@
                 <div class="col-lg-3">
                     <?php foreach ($team3 as $t3) : ?>
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="<?php echo base_url() ?>/assets/img/team/w.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t3['photo'] ?>" alt="..." />
                             <h4><?php echo $t3['nama'] ?></h4>
                             <p><?php echo $t3['npm'] ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
+
                 <div class="col-lg-3">
                     <?php foreach ($team4 as $t4) : ?>
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="<?php echo base_url() ?>/assets/img/team/y.jpg" alt="..." />
+                            <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t4['photo'] ?>" alt="..." />
                             <h4><?php echo $t4['nama'] ?></h4>
                             <p><?php echo $t4['npm'] ?></p>
                         </div>
@@ -217,7 +218,7 @@
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; Delicious <span>Resto.<span> 2022</div>
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Rumah Sakit Umum Kabupaten Bogor 2022</div>
                 <div class="col-lg-4 my-3 my-lg-0">
                     <a class="btn btn-dark btn-social mx-2" href="https://github.com/galanghanaf/penggajian" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="https://github.com/galanghanaf/penggajian" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -243,7 +244,7 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase"><?php echo $p1['nama_portfolio'] ?></h2>
                                     <p class="item-intro text-muted"><?php echo $p1['deskripsi'] ?></p>
-                                    <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/7.jpg" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="<?= base_url() . 'assets/portfolio/' . $p1['photo'] ?>" alt="..." />
                                     <p><?php echo $p1['content'] ?></p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
@@ -262,21 +263,23 @@
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="<?php echo base_url() ?>/assets/img/close-icon.svg" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="<?= base_url() . 'assets/portfolio/' . $p2['photo'] ?>" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Nasi Daging</h2>
-                                <p class="item-intro text-muted">Daging Sapi Olahan Khas Dapoer Galang.</p>
-                                <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/8.jpg" alt="..." />
-                                <p>Daging sapi olahan khas dapoer Galang yang masak dengan bumbu rahasia.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Tutup
-                                </button>
-                            </div>
+                            <?php foreach ($portfolio2 as $p2) : ?>
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase"><?php echo $p2['nama_portfolio'] ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $p2['deskripsi'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/7.jpg" alt="..." />
+                                    <p><?php echo $p2['content'] ?></p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Tutup
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>

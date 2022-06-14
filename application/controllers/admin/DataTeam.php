@@ -23,6 +23,7 @@ class DataTeam extends CI_Controller
         $data['team2'] = $this->penggajian->getAllTeam2();
         $data['team3'] = $this->penggajian->getAllTeam3();
         $data['team4'] = $this->penggajian->getAllTeam4();
+        $data['team5'] = $this->penggajian->getAllTeam5();
 
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
@@ -49,12 +50,26 @@ class DataTeam extends CI_Controller
             $id             = $this->input->post('id_team');
             $nama = $this->input->post('nama');
             $npm = $this->input->post('npm');
+            $photo              = $_FILES['photo']['name'];
+            if ($photo) {
+                $config['upload_path']  = './assets/team';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    $photo = $this->upload->data('file_name');
+                    $this->db->set('photo', $photo);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
 
 
             //setelah datanya dipanggil dengan method post, lalu disimpan di variable data
             $data = array(
                 'nama' => $nama,
                 'npm' => $npm,
+                'photo' => $photo,
+
             );
             $where = array(
                 'id_team' => $id

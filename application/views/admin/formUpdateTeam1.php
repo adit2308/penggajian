@@ -11,25 +11,31 @@
                             <?php foreach ($team1 as $t1) : ?>
                                 <!--foreach/perulangan berguna untuk mengambil data dari query table-->
                                 <!-- Disini kita baca datanya dengan method POST sesuai pada controllers/admin/dataJabatan-->
-                                <form method="post" action="<?php echo base_url('admin/dataTeam/updateDataAksi1') ?>">
-                                    <div class="form-group">
-                                        <label>Nama</label>
-                                        <input type="hidden" name="id_team" class="form-control" value="<?php echo $t1->id_team ?>">
-                                        <input type="text" name="nama" class="form-control" value="<?php echo $t1->nama ?>">
-                                        <!-- function rules kita panggil dengan form_error, untuk menampilkan pesan masalahnya-->
-                                        <?php echo form_error('nama', '<div class="text small text-danger"></div>') ?>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label>NPM</label>
-                                        <input type="number" name="npm" class="form-control" value="<?php echo $t1->npm ?>">
-                                        <!-- function rules kita panggil dengan form_error, untuk menampilkan pesan masalahnya-->
-                                        <?php echo form_error('npm', '<div class="text small text-danger"></div>') ?>
-                                    </div>
+                                <?php echo form_open_multipart('admin/dataTeam/updateDataAksi1') ?>
+                                <div class="form-group">
+                                    <label>Nama</label>
+                                    <input type="hidden" name="id_team" class="form-control" value="<?php echo $t1->id_team ?>">
+                                    <input type="text" name="nama" class="form-control" value="<?php echo $t1->nama ?>">
+                                    <!-- function rules kita panggil dengan form_error, untuk menampilkan pesan masalahnya-->
+                                    <?php echo form_error('nama', '<div class="text small text-danger"></div>') ?>
+                                </div>
 
+                                <div class="form-group">
+                                    <label>NPM</label>
+                                    <input type="number" name="npm" class="form-control" value="<?php echo $t1->npm ?>">
+                                    <!-- function rules kita panggil dengan form_error, untuk menampilkan pesan masalahnya-->
+                                    <?php echo form_error('npm', '<div class="text small text-danger"></div>') ?>
+                                </div>
+                                <div class="form-group">
+                                    <label>Photo</label>
+                                    <input type="file" name="photo" class="form-control" value="<?php echo $t1->photo ?>">
+                                    <!-- function rules kita panggil dengan form_error, untuk menampilkan pesan masalahnya-->
+                                    <?php echo form_error('photo', '<div class="text small text-danger"></div>') ?>
+                                </div>
 
-                                    <button type="submit" class="btn btn-success">Update</button>
-                                </form>
+                                <button type="submit" class="btn btn-success">Update</button>
+                                <?php echo form_close(); ?>
                             <?php endforeach; ?>
                         </div>
                     </div>

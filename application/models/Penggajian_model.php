@@ -64,7 +64,11 @@ class Penggajian_model extends CI_Model
 
         return $this->db->get('team4')->result_array();
     }
+    public function getAllTeam5()
+    {
 
+        return $this->db->get('team5')->result_array();
+    }
 
 
 
