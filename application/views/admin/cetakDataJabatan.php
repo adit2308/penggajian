@@ -31,8 +31,8 @@
                 </td>
                 <td>
                     <center>
-                        <h2>RUMAH SAKIT UMUM</h2>
-                        <h2>Kabupaten Bogor</h2>
+                        <h2>PILLBOX HILL</h2>
+                        <h2>Medical Center</h2>
                         <h5>Gedung Rumah Sakit Umum Kabupaten Bogor</h5>
                         <h5>Jl. Aries Niaga Blok A1 No 3A. Taman Aries no. telp (021) 589069.</h5>
                     </center>

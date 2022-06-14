@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2022 at 09:35 PM
+-- Generation Time: Jun 14, 2022 at 11:47 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -165,6 +165,26 @@ CREATE TABLE `header` (
 
 INSERT INTO `header` (`id_header`, `judul_header1`, `judul_header2`, `opening_header1`, `opening_header2`, `opening_header3`, `opening_header4`, `navbar1`, `navbar2`, `navbar3`) VALUES
 (1, 'PILLBOX HILL', 'MEDICAL CENTER.', 'Welcome To Our Hospital!', 'NICE TO MEET YOU', 'HAVE A NICE DAY', 'TELL ME MORE', 'SERVICE', 'TEAM', 'LOGIN');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `header_background`
+--
+
+CREATE TABLE `header_background` (
+  `id` int(11) NOT NULL,
+  `background1` varchar(300) NOT NULL,
+  `background2` varchar(300) NOT NULL,
+  `background3` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `header_background`
+--
+
+INSERT INTO `header_background` (`id`, `background1`, `background2`, `background3`) VALUES
+(1, 'bg1.jpg', 'bg2.jpg', 'bg3.jpg');
 
 -- --------------------------------------------------------
 
@@ -427,7 +447,7 @@ CREATE TABLE `team4` (
 --
 
 INSERT INTO `team4` (`id_team`, `nama`, `npm`, `photo`) VALUES
-(1, 'Willyman Sopians', '065119175', 'fsa.jpg');
+(1, 'Willyman Sopian', '065119175', 'fsa.jpg');
 
 -- --------------------------------------------------------
 
@@ -485,6 +505,12 @@ ALTER TABLE `hak_akses`
 --
 ALTER TABLE `header`
   ADD PRIMARY KEY (`id_header`);
+
+--
+-- Indexes for table `header_background`
+--
+ALTER TABLE `header_background`
+  ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
 -- Indexes for table `portfolio`
@@ -591,7 +617,7 @@ ALTER TABLE `data_jabatan`
 -- AUTO_INCREMENT for table `data_pegawai`
 --
 ALTER TABLE `data_pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `hak_akses`
@@ -604,6 +630,12 @@ ALTER TABLE `hak_akses`
 --
 ALTER TABLE `header`
   MODIFY `id_header` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `header_background`
+--
+ALTER TABLE `header_background`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
