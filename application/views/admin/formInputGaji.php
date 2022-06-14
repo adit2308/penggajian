@@ -2,7 +2,7 @@
 
 
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?php echo $tittle ?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo $title ?></h1>
     </div>
     <div class="card mb-3">
         <div class="card-header" bg-primary texxt-white>
@@ -35,7 +35,7 @@
                     <select class="form-control ml-3" name="tahun">
                         <option value="">--Pilih Tahun--</option>
                         <?php $tahun = date('Y');
-                        for ($i = 2022; $i < $tahun + 1; $i++) { ?>
+                        for ($i = 2021; $i < $tahun + 4; $i++) { ?>
                             <option value="<?php echo $i ?>"><?php echo $i ?></option>
 
                         <?php } ?>

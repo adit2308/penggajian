@@ -8,7 +8,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
-                <div class=" sidebar-brand-text mx-3">App Penggajian</sup>
+                <div class=" sidebar-brand-text mx-3">Pegawai</sup>
                 </div>
             </a>
 
@@ -54,7 +54,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Topbar -->
 
-                    <h4 class="font-weight-bold">Rumah Sakit Umum</h4>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

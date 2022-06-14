@@ -70,15 +70,16 @@
             <!-- Nav Item - Laporan Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseHome" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-copy"></i>
+                    <i class="fas fa-fw fa-user-cog"></i>
                     <span>Edit HomePages</span>
                 </a>
                 <div id="collapseHome" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Edit HomePages</h6>
-                        <a class="collapse-item" href="<?php echo base_url('admin/dataJudulPortfolio') ?>">Edit Judul HomePage</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataHeader') ?>">Edit Header</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataJudulPortfolio') ?>">Edit Judul Portfolio</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPortfolio') ?>">Edit Portfolio</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataJudulTeam') ?>">Edit Judul Teams</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataTeam') ?>">Edit Teams</a>
                     </div>
                 </div>
@@ -112,7 +113,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                     <!-- Topbar -->
 
-                    <h4 class="font-weight-bold">Rumah Sakit Umum</h4>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

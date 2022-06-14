@@ -37,7 +37,7 @@
                     <select class="form-control ml-3" name="tahun">
                         <option value="">--Pilih Tahun--</option>
                         <?php $tahun = date('Y');
-                        for ($i = 2022; $i < $tahun + 1; $i++) { ?>
+                        for ($i = 2021; $i < $tahun + 4; $i++) { ?>
                             <option value="<?php echo $i ?>"><?php echo $i ?></option>
 
                         <?php } ?>

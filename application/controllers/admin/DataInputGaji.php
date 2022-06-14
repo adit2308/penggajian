@@ -79,7 +79,7 @@ class DataInputGaji extends CI_Controller
         }
 
 
-        $data['tittle'] = "Input Gaji Pegawai";
+        $data['title'] = "Input Gaji Pegawai";
         if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
             $bulan = $_GET['bulan'];
             $tahun = $_GET['tahun'];
@@ -108,6 +108,14 @@ class DataInputGaji extends CI_Controller
         $this->Penggajian_model->delete_data($where, 'data_absensi');
         $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Data Berhasil Dihapus!</strong></div>');
-        redirect('admin/dataAbsensi');
+        redirect('admin/dataInputGaji');
+    }
+
+    public function deleteAllInputGaji()
+    {
+        $this->Penggajian_model->deleteAllInputGaji();
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Semua Data Berhasil Dihapus!</strong></div>');
+        redirect('admin/dataInputGaji');
     }
 }

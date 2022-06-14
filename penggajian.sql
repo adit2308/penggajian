@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 14, 2022 at 04:26 PM
+-- Generation Time: Jun 14, 2022 at 09:35 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -36,128 +36,6 @@ CREATE TABLE `data_absensi` (
   `nama_jabatan` varchar(50) NOT NULL,
   `tanpa_keterangan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `data_absensi`
---
-
-INSERT INTO `data_absensi` (`id_absensi`, `bulan`, `nik`, `nama_pegawai`, `jenis_kelamin`, `nama_jabatan`, `tanpa_keterangan`) VALUES
-(342, '012022', '1358362809', 'Adri', 'Laki-Laki', 'Dokter', 3),
-(343, '012022', '1358362814', 'Ahtar', 'Laki-Laki', 'Dokter', 2),
-(344, '012022', '1358362817', 'Alpin', 'Laki-Laki', 'Perekam Medis', 3),
-(345, '012022', '1358362818', 'Amru', 'Laki-Laki', 'Ahli Gizi', 4),
-(346, '012022', '234234', 'asdfawef', 'Laki-Laki', 'Cleaning Service', 4),
-(347, '012022', '1358362802', 'Asep', 'Laki-Laki', 'Apoteker', 2),
-(348, '012022', '23434235', 'asfdwaef', 'Perempuan', 'Ahli Gizi', 3),
-(349, '012022', '1358362811', 'Dapa', 'Laki-Laki', 'Ahli Gizi', 4),
-(350, '012022', '1358362816', 'Farchan', 'Laki-Laki', 'Ahli Gizi', 3),
-(351, '012022', '1358362801', 'Galang', 'Laki-Laki', 'Dokter', 0),
-(352, '012022', '1358362804', 'Gilang', 'Laki-Laki', 'Radiografer', 0),
-(353, '012022', '1358362821', 'Gina', 'Perempuan', 'Cleaning Service', 3),
-(354, '012022', '1358362810', 'Hanafi', 'Laki-Laki', 'Perekam Medis', 0),
-(355, '012022', '1358362819', 'Julaeha', 'Perempuan', 'Cleaning Service', 4),
-(356, '012022', '1358362824', 'Junet', 'Laki-Laki', 'Perawat', 0),
-(357, '012022', '1358362823', 'Kiara', 'Perempuan', 'Apoteker', 0),
-(358, '012022', '54635', 'safwf', 'Laki-Laki', 'Radiografer', 0),
-(359, '012022', '324234', 'sdafawf', 'Laki-Laki', 'Cleaning Service', 0),
-(360, '012022', '43242', 'sdfaswf', 'Laki-Laki', 'Perekam Medis', 4),
-(361, '012022', '1358362815', 'Sony', 'Laki-Laki', 'Apoteker', 4),
-(362, '012022', '1358362822', 'Suryani', 'Perempuan', 'Dokter', 0),
-(363, '012022', '1358362820', 'Turu', 'Laki-Laki', 'Apoteker', 0),
-(364, '012022', '1358362805', 'Wali', 'Laki-Laki', 'Cleaning Service', 3),
-(365, '012022', '1358362812', 'Willy', 'Laki-Laki', 'Apoteker', 0),
-(366, '012022', '1358362807', 'Yana', 'Laki-Laki', 'Perekam Medis', 0),
-(367, '012022', '1358362806', 'Yani', 'Perempuan', 'Cleaning Service', 4),
-(368, '012022', '1358362813', 'Yudha', 'Laki-Laki', 'Radiografer', 4),
-(369, '012022', '1358362808', 'Yunus', 'Laki-Laki', 'Cleaning Service', 0),
-(370, '012022', '1358362803', 'Zeta', 'Perempuan', 'Ahli Gizi', 0),
-(371, '022022', '1358362809', 'Adri', 'Laki-Laki', 'Dokter', 3),
-(372, '022022', '1358362814', 'Ahtar', 'Laki-Laki', 'Dokter', 0),
-(373, '022022', '1358362817', 'Alpin', 'Laki-Laki', 'Perekam Medis', 0),
-(374, '022022', '1358362818', 'Amru', 'Laki-Laki', 'Ahli Gizi', 0),
-(375, '022022', '234234', 'asdfawef', 'Laki-Laki', 'Cleaning Service', 2),
-(376, '022022', '1358362802', 'Asep', 'Laki-Laki', 'Apoteker', 0),
-(377, '022022', '23434235', 'asfdwaef', 'Perempuan', 'Ahli Gizi', 0),
-(378, '022022', '1358362811', 'Dapa', 'Laki-Laki', 'Ahli Gizi', 0),
-(379, '022022', '1358362816', 'Farchan', 'Laki-Laki', 'Ahli Gizi', 3),
-(380, '022022', '1358362801', 'Galang', 'Laki-Laki', 'Dokter', 0),
-(381, '022022', '1358362804', 'Gilang', 'Laki-Laki', 'Radiografer', 3),
-(382, '022022', '1358362821', 'Gina', 'Perempuan', 'Cleaning Service', 0),
-(383, '022022', '1358362810', 'Hanafi', 'Laki-Laki', 'Perekam Medis', 3),
-(384, '022022', '1358362819', 'Julaeha', 'Perempuan', 'Cleaning Service', 3),
-(385, '022022', '1358362824', 'Junet', 'Laki-Laki', 'Perawat', 0),
-(386, '022022', '1358362823', 'Kiara', 'Perempuan', 'Apoteker', 0),
-(387, '022022', '54635', 'safwf', 'Laki-Laki', 'Radiografer', 0),
-(388, '022022', '324234', 'sdafawf', 'Laki-Laki', 'Cleaning Service', 3),
-(389, '022022', '43242', 'sdfaswf', 'Laki-Laki', 'Perekam Medis', 0),
-(390, '022022', '1358362815', 'Sony', 'Laki-Laki', 'Apoteker', 0),
-(391, '022022', '1358362822', 'Suryani', 'Perempuan', 'Dokter', 2),
-(392, '022022', '1358362820', 'Turu', 'Laki-Laki', 'Apoteker', 0),
-(393, '022022', '1358362805', 'Wali', 'Laki-Laki', 'Cleaning Service', 0),
-(394, '022022', '1358362812', 'Willy', 'Laki-Laki', 'Apoteker', 0),
-(395, '022022', '1358362807', 'Yana', 'Laki-Laki', 'Perekam Medis', 0),
-(396, '022022', '1358362806', 'Yani', 'Perempuan', 'Cleaning Service', 0),
-(397, '022022', '1358362813', 'Yudha', 'Laki-Laki', 'Radiografer', 0),
-(398, '022022', '1358362808', 'Yunus', 'Laki-Laki', 'Cleaning Service', 0),
-(399, '022022', '1358362803', 'Zeta', 'Perempuan', 'Ahli Gizi', 0),
-(400, '062022', '1358362809', 'Adri', 'Laki-Laki', 'Dokter', 1),
-(401, '062022', '1358362814', 'Ahtar', 'Laki-Laki', 'Dokter', 0),
-(402, '062022', '1358362817', 'Alpin', 'Laki-Laki', 'Perekam Medis', 3),
-(403, '062022', '1358362818', 'Amru', 'Laki-Laki', 'Ahli Gizi', 4),
-(404, '062022', '234234', 'asdfawef', 'Laki-Laki', 'Cleaning Service', 0),
-(405, '062022', '1358362802', 'Asep', 'Laki-Laki', 'Apoteker', 4),
-(406, '062022', '23434235', 'asfdwaef', 'Perempuan', 'Ahli Gizi', 4),
-(407, '062022', '1358362811', 'Dapa', 'Laki-Laki', 'Ahli Gizi', 0),
-(408, '062022', '1358362816', 'Farchan', 'Laki-Laki', 'Ahli Gizi', 0),
-(409, '062022', '1358362801', 'Galang', 'Laki-Laki', 'Dokter', 0),
-(410, '062022', '1358362804', 'Gilang', 'Laki-Laki', 'Radiografer', 0),
-(411, '062022', '1358362821', 'Gina', 'Perempuan', 'Cleaning Service', 0),
-(412, '062022', '1358362810', 'Hanafi', 'Laki-Laki', 'Perekam Medis', 0),
-(413, '062022', '1358362819', 'Julaeha', 'Perempuan', 'Cleaning Service', 0),
-(414, '062022', '1358362824', 'Junet', 'Laki-Laki', 'Perawat', 0),
-(415, '062022', '1358362823', 'Kiara', 'Perempuan', 'Apoteker', 0),
-(416, '062022', '54635', 'safwf', 'Laki-Laki', 'Radiografer', 0),
-(417, '062022', '324234', 'sdafawf', 'Laki-Laki', 'Cleaning Service', 0),
-(418, '062022', '43242', 'sdfaswf', 'Laki-Laki', 'Perekam Medis', 0),
-(419, '062022', '1358362815', 'Sony', 'Laki-Laki', 'Apoteker', 0),
-(420, '062022', '1358362822', 'Suryani', 'Perempuan', 'Dokter', 0),
-(421, '062022', '1358362820', 'Turu', 'Laki-Laki', 'Apoteker', 0),
-(422, '062022', '1358362805', 'Wali', 'Laki-Laki', 'Cleaning Service', 0),
-(423, '062022', '1358362812', 'Willy', 'Laki-Laki', 'Apoteker', 0),
-(424, '062022', '1358362807', 'Yana', 'Laki-Laki', 'Perekam Medis', 0),
-(425, '062022', '1358362806', 'Yani', 'Perempuan', 'Cleaning Service', 0),
-(426, '062022', '1358362813', 'Yudha', 'Laki-Laki', 'Radiografer', 0),
-(427, '062022', '1358362808', 'Yunus', 'Laki-Laki', 'Cleaning Service', 0),
-(428, '062022', '1358362803', 'Zeta', 'Perempuan', 'Ahli Gizi', 0),
-(429, '032022', '1358362809', 'Adri', 'Laki-Laki', 'Dokter', 3),
-(430, '032022', '1358362814', 'Ahtar', 'Laki-Laki', 'Dokter', 3),
-(431, '032022', '1358362817', 'Alpin', 'Laki-Laki', 'Perekam Medis', 4),
-(432, '032022', '1358362818', 'Amru', 'Laki-Laki', 'Ahli Gizi', 0),
-(433, '032022', '234234', 'asdfawef', 'Laki-Laki', 'Cleaning Service', 0),
-(434, '032022', '1358362802', 'Asep', 'Laki-Laki', 'Apoteker', 0),
-(435, '032022', '23434235', 'asfdwaef', 'Perempuan', 'Ahli Gizi', 0),
-(436, '032022', '1358362811', 'Dapa', 'Laki-Laki', 'Ahli Gizi', 0),
-(437, '032022', '1358362816', 'Farchan', 'Laki-Laki', 'Ahli Gizi', 0),
-(438, '032022', '1358362801', 'Galang', 'Laki-Laki', 'Dokter', 0),
-(439, '032022', '1358362804', 'Gilang', 'Laki-Laki', 'Radiografer', 0),
-(440, '032022', '1358362821', 'Gina', 'Perempuan', 'Cleaning Service', 0),
-(441, '032022', '1358362810', 'Hanafi', 'Laki-Laki', 'Perekam Medis', 0),
-(442, '032022', '1358362819', 'Julaeha', 'Perempuan', 'Cleaning Service', 0),
-(443, '032022', '1358362824', 'Junet', 'Laki-Laki', 'Perawat', 0),
-(444, '032022', '1358362823', 'Kiara', 'Perempuan', 'Apoteker', 0),
-(445, '032022', '54635', 'safwf', 'Laki-Laki', 'Radiografer', 0),
-(446, '032022', '324234', 'sdafawf', 'Laki-Laki', 'Cleaning Service', 0),
-(447, '032022', '43242', 'sdfaswf', 'Laki-Laki', 'Perekam Medis', 0),
-(448, '032022', '1358362815', 'Sony', 'Laki-Laki', 'Apoteker', 0),
-(449, '032022', '1358362822', 'Suryani', 'Perempuan', 'Dokter', 0),
-(450, '032022', '1358362820', 'Turu', 'Laki-Laki', 'Apoteker', 0),
-(451, '032022', '1358362805', 'Wali', 'Laki-Laki', 'Cleaning Service', 0),
-(452, '032022', '1358362812', 'Willy', 'Laki-Laki', 'Apoteker', 0),
-(453, '032022', '1358362807', 'Yana', 'Laki-Laki', 'Perekam Medis', 0),
-(454, '032022', '1358362806', 'Yani', 'Perempuan', 'Cleaning Service', 0),
-(455, '032022', '1358362813', 'Yudha', 'Laki-Laki', 'Radiografer', 0),
-(456, '032022', '1358362808', 'Yunus', 'Laki-Laki', 'Cleaning Service', 0),
-(457, '032022', '1358362803', 'Zeta', 'Perempuan', 'Ahli Gizi', 0);
 
 -- --------------------------------------------------------
 
@@ -265,6 +143,32 @@ INSERT INTO `hak_akses` (`id`, `keterangan`, `hak_akses`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `header`
+--
+
+CREATE TABLE `header` (
+  `id_header` int(11) NOT NULL,
+  `judul_header1` varchar(300) NOT NULL,
+  `judul_header2` varchar(300) NOT NULL,
+  `opening_header1` varchar(300) NOT NULL,
+  `opening_header2` varchar(300) NOT NULL,
+  `opening_header3` varchar(300) NOT NULL,
+  `opening_header4` varchar(300) NOT NULL,
+  `navbar1` varchar(50) NOT NULL,
+  `navbar2` varchar(50) NOT NULL,
+  `navbar3` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `header`
+--
+
+INSERT INTO `header` (`id_header`, `judul_header1`, `judul_header2`, `opening_header1`, `opening_header2`, `opening_header3`, `opening_header4`, `navbar1`, `navbar2`, `navbar3`) VALUES
+(1, 'PILLBOX HILL', 'MEDICAL CENTER.', 'Welcome To Our Hospital!', 'NICE TO MEET YOU', 'HAVE A NICE DAY', 'TELL ME MORE', 'SERVICE', 'TEAM', 'LOGIN');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `portfolio`
 --
 
@@ -363,7 +267,7 @@ CREATE TABLE `portfolio4` (
 --
 
 INSERT INTO `portfolio4` (`id_portfolio`, `nama_portfolio`, `deskripsi`, `content`, `photo`) VALUES
-(1, 'Hemodialisasi', 'Pelayanan Cuci Darah', 'Unit Hemodialisa merupakan salah satu unit pelayanan RS Jakarta yang diperuntukkan bagi penderita gagal ginjal dalam melakukan cuci darah yang didukung kerjasama tim yang beranggotakan dokter umum yang bersertifikat HD, dokter penyakit dalam, dokter nefrologi, serta perawat yang terampil, mahir dan bersertifikat.', '10.jpg');
+(1, 'Hemodialisasi', 'Pelayanan Cuci Darah', 'Unit Hemodialisa merupakan salah satu unit pelayanan Rumah Sakit yang diperuntukkan bagi penderita gagal ginjal dalam melakukan cuci darah yang didukung kerjasama tim yang beranggotakan dokter umum yang bersertifikat HD, dokter penyakit dalam, dokter nefrologi, serta perawat yang terampil, mahir dan bersertifikat.', '10.jpg');
 
 -- --------------------------------------------------------
 
@@ -429,6 +333,25 @@ INSERT INTO `potongan_gaji` (`id_potongan`, `potongan`, `jml_potongan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `team`
+--
+
+CREATE TABLE `team` (
+  `id_team` int(11) NOT NULL,
+  `judul_team` varchar(100) NOT NULL,
+  `deskripsi` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `team`
+--
+
+INSERT INTO `team` (`id_team`, `judul_team`, `deskripsi`) VALUES
+(1, 'OUR AMAZING TEAM', 'This is our team, happy to give the best for you.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `team1`
 --
 
@@ -464,7 +387,7 @@ CREATE TABLE `team2` (
 --
 
 INSERT INTO `team2` (`id_team`, `nama`, `npm`, `photo`) VALUES
-(1, 'Daffa Ksatria Firdaus', '065119168', 'd.jpg');
+(1, 'Daffa Ksatria Firdaus', '065119168', 'w1.jpg');
 
 -- --------------------------------------------------------
 
@@ -484,7 +407,7 @@ CREATE TABLE `team3` (
 --
 
 INSERT INTO `team3` (`id_team`, `nama`, `npm`, `photo`) VALUES
-(1, 'Willyman Sopian', '065119175', 'w.jpg');
+(1, 'Muchammad Amru Al-Chakim', '065119167', 'd.jpg');
 
 -- --------------------------------------------------------
 
@@ -504,7 +427,7 @@ CREATE TABLE `team4` (
 --
 
 INSERT INTO `team4` (`id_team`, `nama`, `npm`, `photo`) VALUES
-(1, 'Okter Pra Yudha', '065119178', 'y.jpg');
+(1, 'Willyman Sopians', '065119175', 'fsa.jpg');
 
 -- --------------------------------------------------------
 
@@ -524,7 +447,7 @@ CREATE TABLE `team5` (
 --
 
 INSERT INTO `team5` (`id_team`, `nama`, `npm`, `photo`) VALUES
-(1, 'Muchammad Amru Al-Chakim', '065119167', 'a.jpg');
+(1, 'Okter Pra Yudha', '065119178', 'y.jpg');
 
 --
 -- Indexes for dumped tables
@@ -556,6 +479,12 @@ ALTER TABLE `data_pegawai`
 --
 ALTER TABLE `hak_akses`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `header`
+--
+ALTER TABLE `header`
+  ADD PRIMARY KEY (`id_header`);
 
 --
 -- Indexes for table `portfolio`
@@ -607,6 +536,12 @@ ALTER TABLE `potongan_gaji`
   ADD UNIQUE KEY `potongan` (`potongan`);
 
 --
+-- Indexes for table `team`
+--
+ALTER TABLE `team`
+  ADD PRIMARY KEY (`id_team`);
+
+--
 -- Indexes for table `team1`
 --
 ALTER TABLE `team1`
@@ -644,7 +579,7 @@ ALTER TABLE `team5`
 -- AUTO_INCREMENT for table `data_absensi`
 --
 ALTER TABLE `data_absensi`
-  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=458;
+  MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `data_jabatan`
@@ -656,13 +591,19 @@ ALTER TABLE `data_jabatan`
 -- AUTO_INCREMENT for table `data_pegawai`
 --
 ALTER TABLE `data_pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `hak_akses`
 --
 ALTER TABLE `hak_akses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `header`
+--
+ALTER TABLE `header`
+  MODIFY `id_header` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
@@ -711,6 +652,12 @@ ALTER TABLE `portfolio6`
 --
 ALTER TABLE `potongan_gaji`
   MODIFY `id_potongan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `team`
+--
+ALTER TABLE `team`
+  MODIFY `id_team` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `team1`

@@ -25,6 +25,9 @@ class Dashboard extends CI_Controller
         $data['absensi'] = $absensi->num_rows();
 
         $id = $this->session->userdata('id_pegawai');
+        $this->load->model('Penggajian_model', 'penggajian');
+
+        $data['header'] = $this->penggajian->getAllHeader();
 
 
         // berfungsi untuk memanggil view, yang berguna untuk menata file url

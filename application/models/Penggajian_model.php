@@ -27,6 +27,12 @@ class Penggajian_model extends CI_Model
         return $this->db->get('data_pegawai')->num_rows();
     }
 
+    public function getAllHeader()
+    {
+
+        return $this->db->get('header')->result_array();
+    }
+
     public function getAllPortfolio()
     {
 
@@ -66,7 +72,11 @@ class Penggajian_model extends CI_Model
 
         return $this->db->get('portfolio6')->result_array();
     }
+    public function getAllTeam()
+    {
 
+        return $this->db->get('team')->result_array();
+    }
     public function getAllTeam1()
     {
 
@@ -91,6 +101,12 @@ class Penggajian_model extends CI_Model
     {
 
         return $this->db->get('team5')->result_array();
+    }
+
+    public function deleteAllInputGaji()
+    {
+
+        return $this->db->truncate('data_absensi');
     }
 
 

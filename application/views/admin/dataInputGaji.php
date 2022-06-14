@@ -35,7 +35,7 @@
                     <select class="form-control ml-3" name="tahun">
                         <option value="">--Pilih Tahun--</option>
                         <?php $tahun = date('Y');
-                        for ($i = 2022; $i < $tahun + 1; $i++) { ?>
+                        for ($i = 2021; $i < $tahun + 4; $i++) { ?>
                             <option value="<?php echo $i ?>"><?php echo $i ?></option>
 
                         <?php } ?>
@@ -67,12 +67,16 @@
         Menampilkan Data Pegawai Yang Menerima Gaji Pada Bulan: <span class="font-weight-bold"><?php echo $bulan ?></span>
         Tahun: <span class="font-weight-bold"><?php echo $tahun ?></span>
     </div>
-
+    <?php if (count($absensi) > 0) { ?>
+        <a onclick="return confirm('Konfirmasi Penghapusan Semua Data Input Gaji')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/dataInputGaji/deleteAllInputGaji/') ?>">
+            <i class="fas fa-trash"> Hapus Semua Input Data Gaji</i></a>
+    <?php }  ?>
+    <br>
     <?php
     $jml_data = count($absensi);
     if ($jml_data > 0) { ?>
         <?php echo $this->session->flashdata('pesan') ?>
-
+        <br>
         <table class="table table-bordered table-striped">
             <tr>
                 <td class="text-center">No</td>

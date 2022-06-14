@@ -96,7 +96,7 @@
 
                                 <td>
                                     <center>
-                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/datateam/updateData4/' . $t5['id_team']) ?>">
+                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/datateam/updateData5/' . $t5['id_team']) ?>">
                                             <i class="fas fa-edit"></i></a>
                                     </center>
                                 </td>

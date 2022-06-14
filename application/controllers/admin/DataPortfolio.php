@@ -14,7 +14,7 @@ class DataPortfolio extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
 
         //Load model
         $this->load->model('Penggajian_model', 'penggajian');
@@ -37,7 +37,7 @@ class DataPortfolio extends CI_Controller
     public function updateData1($id)
     {
         $data['portfolio1'] = $this->db->query("SELECT * FROM portfolio1 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formUpdatePortfolio1', $data);
@@ -89,7 +89,7 @@ class DataPortfolio extends CI_Controller
     public function updateData2($id)
     {
         $data['portfolio2'] = $this->db->query("SELECT * FROM portfolio2 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formUpdatePortfolio2', $data);
@@ -141,7 +141,7 @@ class DataPortfolio extends CI_Controller
     public function updateData3($id)
     {
         $data['portfolio3'] = $this->db->query("SELECT * FROM portfolio3 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formUpdatePortfolio3', $data);
@@ -193,7 +193,7 @@ class DataPortfolio extends CI_Controller
     public function updateData4($id)
     {
         $data['portfolio4'] = $this->db->query("SELECT * FROM portfolio4 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formUpdatePortfolio4', $data);
@@ -245,7 +245,7 @@ class DataPortfolio extends CI_Controller
     public function updateData5($id)
     {
         $data['portfolio5'] = $this->db->query("SELECT * FROM portfolio5 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formUpdatePortfolio5', $data);
@@ -296,7 +296,7 @@ class DataPortfolio extends CI_Controller
     public function updateData6($id)
     {
         $data['portfolio6'] = $this->db->query("SELECT * FROM portfolio6 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
-        $data['title'] = "Edit Portfolio";
+        $data['title'] = "Edit Data Portfolio";
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/formUpdatePortfolio6', $data);

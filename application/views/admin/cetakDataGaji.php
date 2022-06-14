@@ -101,10 +101,10 @@
             <td width="200px">
                 <p> Bogor, <?php echo date("d M Y") ?>
                     <br>
-                    Pemilik
+                    Direktur
                 </p>
                 <img src="<?php echo base_url() ?>/assets/img/tanda_tangan.png" class="mb" style="width: 100px; height: 100px;">
-                <p>Pamungkas</p>
+                <p>dr .Pamungkas</p>
 
 
 
