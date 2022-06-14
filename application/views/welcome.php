@@ -167,8 +167,8 @@
                 <h3 class="section-subheading text-muted">This is our team, happy to give the best for you.</h3>
             </div>
 
-            <div class="row">
-                <div class="col-lg-3">
+            <div class="row-2 d-flex justify-content-center">
+                <div class="col-md-3">
                     <?php foreach ($team1 as $t1) : ?>
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t1['photo'] ?>" alt="..." />
@@ -178,7 +178,7 @@
                     <?php endforeach; ?>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-md-3">
                     <?php foreach ($team2 as $t2) : ?>
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t2['photo'] ?>" alt="..." />
@@ -188,7 +188,7 @@
                     <?php endforeach; ?>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-md-3">
                     <?php foreach ($team3 as $t3) : ?>
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t3['photo'] ?>" alt="..." />
@@ -198,12 +198,21 @@
                     <?php endforeach; ?>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-md-3">
                     <?php foreach ($team4 as $t4) : ?>
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t4['photo'] ?>" alt="..." />
                             <h4><?php echo $t4['nama'] ?></h4>
                             <p><?php echo $t4['npm'] ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="col-md-3">
+                    <?php foreach ($team5 as $t5) : ?>
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="<?= base_url() . 'assets/team/' . $t5['photo'] ?>" alt="..." />
+                            <h4><?php echo $t5['nama'] ?></h4>
+                            <p><?php echo $t5['npm'] ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -263,7 +272,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img src="<?= base_url() . 'assets/portfolio/' . $p2['photo'] ?>" alt="Close modal" /></div>
+                <div class="close-modal" data-bs-dismiss="modal"><img src="<?php echo base_url() ?>/assets/img/close-icon.svg" alt="Close modal" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -272,7 +281,7 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase"><?php echo $p2['nama_portfolio'] ?></h2>
                                     <p class="item-intro text-muted"><?php echo $p2['deskripsi'] ?></p>
-                                    <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/7.jpg" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="<?= base_url() . 'assets/portfolio/' . $p2['photo'] ?>" alt="..." />
                                     <p><?php echo $p2['content'] ?></p>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
@@ -294,17 +303,19 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Nasi Cokot</h2>
-                                <p class="item-intro text-muted">Paket Nasi Khas Dapoer Galang.</p>
-                                <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/9.jpg" alt="..." />
-                                <p>Nasi yang dicampur dengan berbagai lauk pauk khas dapoer Galang.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Tutup
-                                </button>
-                            </div>
+                            <?php foreach ($portfolio3 as $p3) : ?>
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase"><?php echo $p3['nama_portfolio'] ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $p3['deskripsi'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="<?= base_url() . 'assets/portfolio/' . $p3['photo'] ?>" alt="..." />
+                                    <p><?php echo $p3['content'] ?></p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Tutup
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -319,20 +330,19 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Nasi Lemak</h2>
-                                <p class="item-intro text-muted">Nasi Lemak Khas Dapoer Galang.</p>
-                                <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/10.jpg" alt="..." />
-                                <p>Nasi lemak adalah jenis makanan khas suku Melayu yang lazim ditemukan di Malaysia di
-                                    mana hidangan ini dianggap sebagai salah satu hidangan nasionalnya, dan Indonesia,
-                                    khususnya di Riau, Kepulauan Riau dan Sumatera Utara. Hidangan ini pun dapat
-                                    ditemukan di Singapura dan Brunei.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Tutup
-                                </button>
-                            </div>
+                            <?php foreach ($portfolio4 as $p4) : ?>
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase"><?php echo $p4['nama_portfolio'] ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $p4['deskripsi'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="<?= base_url() . 'assets/portfolio/' . $p4['photo'] ?>" alt="..." />
+                                    <p><?php echo $p4['content'] ?></p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Tutup
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -347,20 +357,20 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Nasi Goreng</h2>
-                                <p class="item-intro text-muted">Nasi Goreng Khas Dapoer Galang.</p>
-                                <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/11.jpeg" alt="..." />
-                                <p>Nasi goreng adalah sebuah makanan berupa nasi yang digoreng dan diaduk dalam minyak
-                                    goreng, margarin, atau mentega. Biasanya ditambah kecap manis, bawang merah, bawang
-                                    putih, asam jawa, lada dan bumbu-bumbu lainnya; seperti telur, ayam, dan kerupuk.
-                                </p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Tutup
-                                </button>
-                            </div>
+                            <?php foreach ($portfolio5 as $p5) : ?>
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase"><?php echo $p5['nama_portfolio'] ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $p5['deskripsi'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="<?= base_url() . 'assets/portfolio/' . $p5['photo'] ?>" alt="..." />
+                                    <p><?php echo $p5['content'] ?>
+                                    </p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Tutup
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -375,19 +385,19 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
-                            <div class="modal-body">
-                                <!-- Project details-->
-                                <h2 class="text-uppercase">Nasi Rendang</h2>
-                                <p class="item-intro text-muted">Daging Rendang Khas Dapoer Galang.</p>
-                                <img class="img-fluid d-block mx-auto" src="<?php echo base_url() ?>/assets/img/portfolio/12.jpg" alt="..." />
-                                <p>Rendang atau randang adalah masakan yang berbahan dasar daging asli Indonesia yang
-                                    berasal dari Minangkabau. Masakan ini dihasilkan dari proses memasak suhu rendah
-                                    dalam waktu lama dengan menggunakan aneka rempah-rempah dan santan.</p>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                    <i class="fas fa-xmark me-1"></i>
-                                    Tutup
-                                </button>
-                            </div>
+                            <?php foreach ($portfolio6 as $p6) : ?>
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase"><?php echo $p6['nama_portfolio'] ?></h2>
+                                    <p class="item-intro text-muted"><?php echo $p6['deskripsi'] ?></p>
+                                    <img class="img-fluid d-block mx-auto" src="<?= base_url() . 'assets/portfolio/' . $p6['photo'] ?>" alt="..." />
+                                    <p><?php echo $p6['content'] ?></p>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Tutup
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -454,7 +464,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var typed = new Typed('.auto-type', {
-            strings: ["", "Nice To Meet You", "Have a Nice Day", "Enjoy Our Meal"],
+            strings: ["", "Nice To Meet You", "Have a Nice Day"],
             typeSpeed: 70,
             backSpeed: 70,
             loop: true

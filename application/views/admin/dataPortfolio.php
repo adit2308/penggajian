@@ -52,6 +52,74 @@
                                 </td>
                             </tr>
                         <?php endforeach; ?>
+
+                        <?php $no = 3;
+                        foreach ($portfolio3 as $p3) : ?>
+                            <tr>
+                                <td class="text-center"><?php echo $no++ ?></td>
+                                <td class="text-center"><?php echo $p3['nama_portfolio'] ?></td>
+                                <td class="text-center"><?php echo $p3['deskripsi'] ?></td>
+                                <td class="text-center"><?php echo $p3['content'] ?></td>
+                                <td class="text-center"><img src="<?= base_url() . 'assets/portfolio/' . $p3['photo'] ?>" width="75px"></td>
+                                <td>
+                                    <center>
+                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPortfolio/updateData3/' . $p3['id_portfolio']) ?>">
+                                            <i class="fas fa-edit"></i></a>
+                                    </center>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+
+                        <?php $no = 4;
+                        foreach ($portfolio4 as $p4) : ?>
+                            <tr>
+                                <td class="text-center"><?php echo $no++ ?></td>
+                                <td class="text-center"><?php echo $p4['nama_portfolio'] ?></td>
+                                <td class="text-center"><?php echo $p4['deskripsi'] ?></td>
+                                <td class="text-center"><?php echo $p4['content'] ?></td>
+                                <td class="text-center"><img src="<?= base_url() . 'assets/portfolio/' . $p4['photo'] ?>" width="75px"></td>
+                                <td>
+                                    <center>
+                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPortfolio/updateData4/' . $p3['id_portfolio']) ?>">
+                                            <i class="fas fa-edit"></i></a>
+                                    </center>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+
+                        <?php $no = 5;
+                        foreach ($portfolio5 as $p5) : ?>
+                            <tr>
+                                <td class="text-center"><?php echo $no++ ?></td>
+                                <td class="text-center"><?php echo $p5['nama_portfolio'] ?></td>
+                                <td class="text-center"><?php echo $p5['deskripsi'] ?></td>
+                                <td class="text-center"><?php echo $p5['content'] ?></td>
+                                <td class="text-center"><img src="<?= base_url() . 'assets/portfolio/' . $p5['photo'] ?>" width="75px"></td>
+                                <td>
+                                    <center>
+                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPortfolio/updateData5/' . $p5['id_portfolio']) ?>">
+                                            <i class="fas fa-edit"></i></a>
+                                    </center>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+
+                        <?php $no = 6;
+                        foreach ($portfolio6 as $p6) : ?>
+                            <tr>
+                                <td class="text-center"><?php echo $no++ ?></td>
+                                <td class="text-center"><?php echo $p6['nama_portfolio'] ?></td>
+                                <td class="text-center"><?php echo $p6['deskripsi'] ?></td>
+                                <td class="text-center"><?php echo $p6['content'] ?></td>
+                                <td class="text-center"><img src="<?= base_url() . 'assets/portfolio/' . $p6['photo'] ?>" width="75px"></td>
+                                <td>
+                                    <center>
+                                        <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/dataPortfolio/updateData6/' . $p6['id_portfolio']) ?>">
+                                            <i class="fas fa-edit"></i></a>
+                                    </center>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </table>
 
                 </div>

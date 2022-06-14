@@ -12,6 +12,11 @@ class Welcome extends CI_Controller
 		$data['portfolio'] = $this->penggajian->getAllPortfolio();
 		$data['portfolio1'] = $this->penggajian->getAllPortfolio1();
 		$data['portfolio2'] = $this->penggajian->getAllPortfolio2();
+		$data['portfolio3'] = $this->penggajian->getAllPortfolio3();
+		$data['portfolio4'] = $this->penggajian->getAllPortfolio4();
+		$data['portfolio5'] = $this->penggajian->getAllPortfolio5();
+		$data['portfolio6'] = $this->penggajian->getAllPortfolio6();
+
 		$data['team1'] = $this->penggajian->getAllTeam1();
 		$data['team2'] = $this->penggajian->getAllTeam2();
 		$data['team3'] = $this->penggajian->getAllTeam3();

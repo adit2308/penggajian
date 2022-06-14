@@ -44,6 +44,29 @@ class Penggajian_model extends CI_Model
 
         return $this->db->get('portfolio2')->result_array();
     }
+
+    public function getAllPortfolio3()
+    {
+
+        return $this->db->get('portfolio3')->result_array();
+    }
+
+    public function getAllPortfolio4()
+    {
+
+        return $this->db->get('portfolio4')->result_array();
+    }
+    public function getAllPortfolio5()
+    {
+
+        return $this->db->get('portfolio5')->result_array();
+    }
+    public function getAllPortfolio6()
+    {
+
+        return $this->db->get('portfolio6')->result_array();
+    }
+
     public function getAllTeam1()
     {
 

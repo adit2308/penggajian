@@ -22,16 +22,17 @@ class DataPortfolio extends CI_Controller
         $data['portfolio'] = $this->penggajian->getAllPortfolio();
         $data['portfolio1'] = $this->penggajian->getAllPortfolio1();
         $data['portfolio2'] = $this->penggajian->getAllPortfolio2();
+        $data['portfolio3'] = $this->penggajian->getAllPortfolio3();
+        $data['portfolio4'] = $this->penggajian->getAllPortfolio4();
+        $data['portfolio5'] = $this->penggajian->getAllPortfolio5();
+        $data['portfolio6'] = $this->penggajian->getAllPortfolio6();
+
 
         $this->load->view('templatesAdmin/header', $data);
         $this->load->view('templatesAdmin/sidebar');
         $this->load->view('admin/dataPortfolio', $data);
         $this->load->view('templatesAdmin/footer');
     }
-
-
-
-
 
     public function updateData1($id)
     {
@@ -137,6 +138,211 @@ class DataPortfolio extends CI_Controller
         }
     }
 
+    public function updateData3($id)
+    {
+        $data['portfolio3'] = $this->db->query("SELECT * FROM portfolio3 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['title'] = "Edit Portfolio";
+        $this->load->view('templatesAdmin/header', $data);
+        $this->load->view('templatesAdmin/sidebar');
+        $this->load->view('admin/formUpdatePortfolio3', $data);
+        $this->load->view('templatesAdmin/footer');
+    }
+
+    public function updateDataAksi3()
+    {
+        $this->_rules(); //function ini berfungsi untuk melakukan form_validation
+
+        if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke tambah_data
+            redirect('admin/dataPortfolio');
+        } else {
+            $id             = $this->input->post('id_portfolio');
+            $nama_portfolio = $this->input->post('nama_portfolio');
+            $deskripsi = $this->input->post('deskripsi');
+            $content = $this->input->post('content');
+            $photo              = $_FILES['photo']['name'];
+            if ($photo) {
+                $config['upload_path']  = './assets/portfolio';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    $photo = $this->upload->data('file_name');
+                    $this->db->set('photo', $photo);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            //setelah datanya dipanggil dengan method post, lalu disimpan di variable data
+            $data = array(
+                'nama_portfolio' => $nama_portfolio,
+                'deskripsi' => $deskripsi,
+                'content' => $content,
+                'photo' => $photo,
+            );
+            $where = array(
+                'id_portfolio' => $id
+            );
+
+            $this->Penggajian_model->update_data('portfolio3', $data, $where);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Data Berhasil Diupdate!</strong></div>');
+            redirect('admin/dataPortfolio');
+        }
+    }
+
+    public function updateData4($id)
+    {
+        $data['portfolio4'] = $this->db->query("SELECT * FROM portfolio4 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['title'] = "Edit Portfolio";
+        $this->load->view('templatesAdmin/header', $data);
+        $this->load->view('templatesAdmin/sidebar');
+        $this->load->view('admin/formUpdatePortfolio4', $data);
+        $this->load->view('templatesAdmin/footer');
+    }
+
+    public function updateDataAksi4()
+    {
+        $this->_rules(); //function ini berfungsi untuk melakukan form_validation
+
+        if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke tambah_data
+            redirect('admin/dataPortfolio');
+        } else {
+            $id             = $this->input->post('id_portfolio');
+            $nama_portfolio = $this->input->post('nama_portfolio');
+            $deskripsi = $this->input->post('deskripsi');
+            $content = $this->input->post('content');
+            $photo              = $_FILES['photo']['name'];
+            if ($photo) {
+                $config['upload_path']  = './assets/portfolio';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    $photo = $this->upload->data('file_name');
+                    $this->db->set('photo', $photo);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            //setelah datanya dipanggil dengan method post, lalu disimpan di variable data
+            $data = array(
+                'nama_portfolio' => $nama_portfolio,
+                'deskripsi' => $deskripsi,
+                'content' => $content,
+                'photo' => $photo,
+            );
+            $where = array(
+                'id_portfolio' => $id
+            );
+
+            $this->Penggajian_model->update_data('portfolio4', $data, $where);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Data Berhasil Diupdate!</strong></div>');
+            redirect('admin/dataPortfolio');
+        }
+    }
+
+    public function updateData5($id)
+    {
+        $data['portfolio5'] = $this->db->query("SELECT * FROM portfolio5 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['title'] = "Edit Portfolio";
+        $this->load->view('templatesAdmin/header', $data);
+        $this->load->view('templatesAdmin/sidebar');
+        $this->load->view('admin/formUpdatePortfolio5', $data);
+        $this->load->view('templatesAdmin/footer');
+    }
+
+    public function updateDataAksi5()
+    {
+        $this->_rules(); //function ini berfungsi untuk melakukan form_validation
+
+        if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke tambah_data
+            redirect('admin/dataPortfolio');
+        } else {
+            $id             = $this->input->post('id_portfolio');
+            $nama_portfolio = $this->input->post('nama_portfolio');
+            $deskripsi = $this->input->post('deskripsi');
+            $content = $this->input->post('content');
+            $photo              = $_FILES['photo']['name'];
+            if ($photo) {
+                $config['upload_path']  = './assets/portfolio';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    $photo = $this->upload->data('file_name');
+                    $this->db->set('photo', $photo);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            //setelah datanya dipanggil dengan method post, lalu disimpan di variable data
+            $data = array(
+                'nama_portfolio' => $nama_portfolio,
+                'deskripsi' => $deskripsi,
+                'content' => $content,
+                'photo' => $photo,
+            );
+            $where = array(
+                'id_portfolio' => $id
+            );
+
+            $this->Penggajian_model->update_data('portfolio5', $data, $where);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Data Berhasil Diupdate!</strong></div>');
+            redirect('admin/dataPortfolio');
+        }
+    }
+    public function updateData6($id)
+    {
+        $data['portfolio6'] = $this->db->query("SELECT * FROM portfolio6 WHERE id_portfolio='$id'")->result(); //result berfungsi untuk menggenerate/menampung/menampilkan query(data)
+        $data['title'] = "Edit Portfolio";
+        $this->load->view('templatesAdmin/header', $data);
+        $this->load->view('templatesAdmin/sidebar');
+        $this->load->view('admin/formUpdatePortfolio6', $data);
+        $this->load->view('templatesAdmin/footer');
+    }
+    public function updateDataAksi6()
+    {
+        $this->_rules(); //function ini berfungsi untuk melakukan form_validation
+
+        if ($this->form_validation->run() == FALSE) { //disini apabila form yang sudah kita buat ternyata pada saat di validasi false maka, akan dikembalikan ke tambah_data
+            redirect('admin/dataPortfolio');
+        } else {
+            $id             = $this->input->post('id_portfolio');
+            $nama_portfolio = $this->input->post('nama_portfolio');
+            $deskripsi = $this->input->post('deskripsi');
+            $content = $this->input->post('content');
+            $photo              = $_FILES['photo']['name'];
+            if ($photo) {
+                $config['upload_path']  = './assets/portfolio';
+                $config['allowed_types']  = 'jpg|jpeg|png|tiff';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('photo')) {
+                    $photo = $this->upload->data('file_name');
+                    $this->db->set('photo', $photo);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            //setelah datanya dipanggil dengan method post, lalu disimpan di variable data
+            $data = array(
+                'nama_portfolio' => $nama_portfolio,
+                'deskripsi' => $deskripsi,
+                'content' => $content,
+                'photo' => $photo,
+            );
+            $where = array(
+                'id_portfolio' => $id
+            );
+
+            $this->Penggajian_model->update_data('portfolio6', $data, $where);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Data Berhasil Diupdate!</strong></div>');
+            redirect('admin/dataPortfolio');
+        }
+    }
     /*
     fungsi function ini untuk melakukan form_validation, tujuan untuk menentukan rules dari setiap input yang ada pada views 
         //disini kita men set rules dengan required, artinya form wajib di isi
