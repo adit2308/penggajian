@@ -26,6 +26,8 @@ class Welcome extends CI_Controller
 
 		$data['header'] = $this->penggajian->getAllHeader();
 
+		$data['header_background'] = $this->penggajian->getAllHeaderBackground();
+
 
 		$this->_rules();
 		//function ini berfungsi untuk melakukan form_validation

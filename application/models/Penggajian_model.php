@@ -32,6 +32,11 @@ class Penggajian_model extends CI_Model
 
         return $this->db->get('header')->result_array();
     }
+    public function getAllHeaderBackground()
+    {
+
+        return $this->db->get('header_background')->result_array();
+    }
 
     public function getAllPortfolio()
     {

@@ -12481,27 +12481,27 @@ header.masthead .masthead-heading h2 {
 /* Menambahkan efek animasi pada header */
 @keyframes slide {
   0%{
-    background-image: url("../assets/img/carousel/cr1.jpg");
+    background-image: url("../assets/background/bg1.jpg");
   }
 
   33%{
-    background-image: url("../assets/img/carousel/cr1.jpg");
+    background-image: url("../assets/background/bg1.jpg");
   }
 
   33.01%{
-    background-image: url("../assets/img/carousel/cr2.jpg");
+    background-image: url("../assets/background/bg2.jpg");
   }
 
   66%{
-    background-image: url("../assets/img/carousel/cr2.jpg");
+    background-image: url("../assets/background/bg2.jpg");
   }
 
   66.01%{
-    background-image: url("../assets/img/carousel/cr3.jpg");
+    background-image: url("../assets/background/bg3.jpg");
   }
 
   100%{
-    background-image: url("../assets/img/carousel/cr3.jpg");
+    background-image: url("../assets/background/bg3.jpg");
   }
 }
 

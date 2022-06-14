@@ -77,6 +77,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Edit HomePages</h6>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataHeader') ?>">Edit Header</a>
+                        <a class="collapse-item" href="<?php echo base_url('admin/dataHeaderBackground') ?>">Edit Header Background</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataJudulPortfolio') ?>">Edit Judul Portfolio</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataPortfolio') ?>">Edit Portfolio</a>
                         <a class="collapse-item" href="<?php echo base_url('admin/dataJudulTeam') ?>">Edit Judul Teams</a>
